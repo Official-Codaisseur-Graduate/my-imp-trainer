@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/styles';
+import logo from '../images/logo.png'
 
 
 
@@ -22,9 +23,19 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+  logo: {
+    width: "100%",
+    marginRight: '0',
+    marginBottom: "6%",
+    marginTop: "1%",
+
+    "& img": {
+      width: "80%",
+    marginRight: '0',
+    marginBottom: "6%",
+    marginTop: "1%",
+    }
+
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -43,17 +54,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-// const BlablaField = withStyles({
-//   root: {
-//     '& input': {
-//       color: "red"
-//     },
-//     '&': {
-//       color: "red"
-//     }
-//   }
-// })(TextField)
-
 export default function Login() {
   const classes = useStyles();
 
@@ -61,9 +61,9 @@ export default function Login() {
     <Container  component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-         
-        </Avatar>
+        <div className={classes.logo}>
+         <img src={logo}/>
+        </div>
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
