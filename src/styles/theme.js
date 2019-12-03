@@ -95,8 +95,11 @@ export const theme = createMuiTheme({
       root: {
         "& > $notchedOutline": {
           borderColor: lighten("#070707", 0.12), backgroundColor: lighten("#070707", 0.2), color: 'white'
-        }
+        },
+        " MuiCardMedia-media": {
+          height: "250px",
+      },
       }
-    }
+    },
   }
 })
