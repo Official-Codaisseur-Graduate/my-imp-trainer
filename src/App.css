@@ -8,3 +8,8 @@
 .App-link {
   color: #09d3ac;
 }
+
+.App a {
+  text-decoration: none;
+  color: inherit;
+}
