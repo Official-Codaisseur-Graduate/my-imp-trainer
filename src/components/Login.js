@@ -19,38 +19,36 @@ import { Link as Route}  from "react-router-dom";
 const useStyles = makeStyles(theme => ({
   paper: {
     paddingTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
   },
   logo: {
     width: "100%",
-    marginRight: '0',
+    marginRight: "0",
     marginBottom: "6%",
     marginTop: "1%",
 
     "& img": {
       width: "80%",
-      marginRight: '0',
+      marginRight: "0",
       marginBottom: "6%",
-      marginTop: "1%",
+      marginTop: "1%"
     }
-
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(1)
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: theme.spacing(3, 0, 2)
   },
   container: {
-    backgroundColor: theme.palette.backgroundColor,
+    backgroundColor: theme.palette.backgroundColor
   },
   textField: {
-    outlineColor: theme.palette.textColor,
-
-  },
+    outlineColor: theme.palette.textColor
+  }
 }));
 
 //This is a test comment
@@ -122,9 +120,7 @@ export default function Login() {
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
-
-      </Box>
-    </Container >
+      <Box mt={8}></Box>
+    </Container>
   );
 }
