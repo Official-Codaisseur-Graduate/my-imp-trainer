@@ -4,13 +4,15 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
+import Link  from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import logo from '../images/logo.png'
+import { Link as Route}  from "react-router-dom";
+
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -92,6 +94,7 @@ export default function Login() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
+          <Route to={'/trophy'}>
           <Button
             type="submit"
             fullWidth
@@ -100,7 +103,7 @@ export default function Login() {
             className={classes.submit}
           >
             Sign In
-          </Button>
+          </Button></Route>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
