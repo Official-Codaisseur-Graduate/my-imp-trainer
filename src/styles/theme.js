@@ -1,7 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { lighten } from 'material-ui/utils/colorManipulator';
 
-
 export const theme = createMuiTheme({
   type: "dark",
   palette: {
