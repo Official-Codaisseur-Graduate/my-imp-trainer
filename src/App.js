@@ -2,12 +2,11 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login';
+import CalendarContainer from './components/Calendar/CalendarContainer'
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme} from './styles/theme'
 import { AnimatedSwitch } from 'react-router-transition';
 import Trophy from './components/trophy/Trophy';
-
-
 
 
 function App() {
@@ -22,9 +21,10 @@ function App() {
     >
       <Route exact path="/" component={Login} />
       <Route exact path="/trophy" component={Trophy}/>
-
+      <Route exact path="/calendar" component={CalendarContainer} />
       </AnimatedSwitch>
     </ThemeProvider>
+
     </div>
   );
 }
