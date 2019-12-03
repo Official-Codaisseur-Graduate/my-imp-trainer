@@ -94,7 +94,7 @@ export const theme = createMuiTheme({
     MuiOutlinedInput: {
       root: {
         "& > $notchedOutline": {
-          borderColor: lighten("#070707", 0.12), backgroundColor: lighten("#070707", 0.2)
+          borderColor: lighten("#070707", 0.12), backgroundColor: lighten("#070707", 0.2), color: 'white'
         }
       }
     }
