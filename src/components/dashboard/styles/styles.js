@@ -1,29 +1,30 @@
-
 export default theme => ({
   userCard: {
     padding: "1vh",
+    marginTop: '2vh',
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     width: "40%",
     border: "1px solid",
     borderColor: theme.palette.primary.dark,
-    borderRadius: '20px',
+    borderRadius: "20px",
     margin: "0 auto"
   },
   user: {
     border: "1px solid red",
     padding: "2vh",
-    borderRadius: "50%"
+    borderRadius: "50%",
+    marginBottom: '2vh'
   },
   progressBar: {
-    margin: '2vh auto',
+    margin: "2vh auto",
     position: "relative",
     height: "3vh",
     width: "75vw",
     borderRadius: "50px",
     border: "1px solid",
-    borderColor: theme.palette.textColor,
+    borderColor: theme.palette.textColor
   },
   filler: {
     background: theme.palette.secondary.main,
@@ -32,24 +33,37 @@ export default theme => ({
     transition: "width .2s ease-in"
   },
   trackers: {
-    display: 'flex',
-    flexDirection:'row',
-    justifyContent: 'space-around'
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around"
   },
-  tracker : {
-    width: '30vw'
+  tracker: {
+    marginTop: "5vh",
+    width: "30vw",
   },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
+  progressPercentage: {
+    marginLeft: "13vw",
+    marginTop: "3vh",
+    display: "flex",
+    justifyContent: "flex-start"
   },
-  submit: {
-    margin: theme.spacing(3, 0, 2)
+  startWorkoutBtn: {
+    height: "20vh",
+    width: "20vh",
+    background: theme.palette.primary.main,
+    color: theme.palette.textColor
   },
-  container: {
-    backgroundColor: theme.palette.backgroundColor
+  streak: {
+    height: "20vh",
+    width: "20vh",
+    lineHeight: '20vh',
+    background: theme.palette.textColor,
+    color: theme.palette.primary.main,
+    verticalAlign: 'middle',
   },
-  textField: {
-    outlineColor: theme.palette.textColor
-  }
+  lowerDashboard: { 
+    marginTop: '5vh',
+    display: "flex", 
+    flexDirection: "row",
+    justifyContent: 'space-around' }
 });

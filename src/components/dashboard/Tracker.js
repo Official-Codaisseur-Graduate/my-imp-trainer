@@ -9,7 +9,7 @@ const Tracker = props => {
 
   return (
     <div className={classes.tracker}>
-      <Paper>
+      <Paper style={{height:'15vh'}}>
         <Typography variant="h6" color='primary'>
         {props.title}
         </Typography>
