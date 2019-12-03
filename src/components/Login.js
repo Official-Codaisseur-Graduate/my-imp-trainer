@@ -1,5 +1,4 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -11,10 +10,8 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { withStyles } from '@material-ui/styles';
+// import { withStyles } from '@material-ui/styles';
 import logo from '../images/logo.png'
-
-
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -31,9 +28,9 @@ const useStyles = makeStyles(theme => ({
 
     "& img": {
       width: "80%",
-    marginRight: '0',
-    marginBottom: "6%",
-    marginTop: "1%",
+      marginRight: '0',
+      marginBottom: "6%",
+      marginTop: "1%",
     }
 
   },
@@ -49,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   },
   textField: {
     outlineColor: theme.palette.textColor,
-    
+
   },
 }));
 
@@ -58,18 +55,20 @@ export default function Login() {
   const classes = useStyles();
 
   return (
-    <Container  component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <div className={classes.logo}>
-         <img src={logo}/>
+          <Link href="calendar">
+            <img src={logo} alt="" />
+          </Link>
         </div>
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
-          className={classes.textField}
+            className={classes.textField}
             variant="outlined"
             margin="normal"
             required
@@ -81,7 +80,7 @@ export default function Login() {
             autoFocus
           />
           <TextField
-          className={classes.textField}
+            className={classes.textField}
             variant="outlined"
             margin="normal"
             required
@@ -120,8 +119,8 @@ export default function Login() {
         </form>
       </div>
       <Box mt={8}>
-      
+
       </Box>
-    </Container>
+    </Container >
   );
 }
