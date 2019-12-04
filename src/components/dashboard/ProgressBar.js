@@ -11,8 +11,7 @@ const ProgressBar = props => {
 
   return (
     <div>
-    <div className={classes.progressPercentage}><FontAwesomeIcon icon={faTrophy}/> <Typography variant="subtitle2" color="primary"> <strong>  {props.percentage}% of your program</strong></Typography></div>
-      
+    <div className={classes.progressPercentage}><FontAwesomeIcon icon={faTrophy}/> <Typography variant="subtitle2" color="primary"> <strong>&ensp;{props.percentage}% of your program</strong></Typography></div>
 
       <div className={classes.progressBar}>
         <ProgressBarFiller

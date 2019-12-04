@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import trophy from "./trophy.png";
 import star from "./star.png";
 import program from "./program.png";
+import  { Link } from 'react-router-dom';
 
 //here is the pictures for the three options 
 const progress = {
@@ -59,37 +60,40 @@ const useStyles = makeStyles({
     fontSize: "1rem",
       fontWeight: "600",
       textTransform: "none",
-      margin: "0 auto",
-      marginTop: "5vh",
+      display:"block",
   },  
 });
 
-export default function Trophy() {
+export default function Trophy(props) {
   const classes = useStyles();
+
 
   return (
     <Card className={classes.card}>
       <CardActionArea>
-        <img src={progress.week} className={classes.cardMedia}
+        <img src={progress[props.achievement]} className={classes.cardMedia}
           component="img"
           alt="Contemplative Reptile"
         />
         <CardContent className={classes.content}>
           <Typography className={classes.body} gutterBottom variant="h5" component="h2">
-            Congratulations! 
+            Well Done! 
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p" className={classes.content}>
-            {content.week}
+            {content[props.achievement]}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button className={classes.button}  type="submit"
+      <CardActions className={classes.button}>
+          <Link to={'/dashboard'}>
+          <Button  className={classes.button}
+            type="submit"
             fullWidth
             variant="contained"
             color="primary" size="small">
           Back to Dashboard
         </Button>
+        </Link>
       </CardActions>
     </Card>
   );
