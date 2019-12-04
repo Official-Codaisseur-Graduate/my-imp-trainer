@@ -20,7 +20,7 @@ export default theme => ({
   progressBar: {
     margin: "2vh auto",
     position: "relative",
-    height: "3vh",
+    height: "2vh",
     width: "75vw",
     borderRadius: "50px",
     border: "1px solid",
@@ -38,8 +38,13 @@ export default theme => ({
     justifyContent: "space-around"
   },
   tracker: {
-    marginTop: "5vh",
+    marginTop: "2vh",
     width: "30vw",
+  },
+  trackerContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around'
   },
   progressPercentage: {
     marginLeft: "13vw",
@@ -47,19 +52,24 @@ export default theme => ({
     display: "flex",
     justifyContent: "flex-start"
   },
-  startWorkoutBtn: {
-    height: "20vh",
-    width: "20vh",
+  calendarBtn: {
+    height: "17vh",
+    width: "17vh",
     background: theme.palette.primary.main,
     color: theme.palette.textColor
   },
+  startWorkoutBtn: {
+    height: "12vh",
+    width: "80vw",
+    marginTop: '4vh',
+    background: theme.palette.secondary.main,
+    color: theme.palette.textColor
+  },
   streak: {
-    height: "20vh",
-    width: "20vh",
-    lineHeight: '20vh',
+    height: "17vh",
+    width: "17vh",
     background: theme.palette.textColor,
     color: theme.palette.primary.main,
-    verticalAlign: 'middle',
   },
   lowerDashboard: { 
     marginTop: '5vh',
