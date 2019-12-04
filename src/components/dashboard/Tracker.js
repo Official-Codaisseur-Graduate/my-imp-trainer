@@ -9,12 +9,12 @@ const Tracker = props => {
 
   return (
     <div className={classes.tracker}>
-      <Paper style={{height:'15vh'}}>
+      <Paper style={{height:'15vh'}} className={classes.trackerContent}>
         <Typography variant="h6" color='primary'>
         {props.title}
         </Typography>
         <Typography component="p">
-          {props.number}
+          <strong>{props.number}</strong>
         </Typography>
       </Paper>{" "}
     </div>
