@@ -11,7 +11,6 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
-import WeekContainer from './WeekContainer';
 import Link from '@material-ui/core/Link';
 import logo from '../../images/logo.png';
 
@@ -103,7 +102,7 @@ const months = [
   }
 ];
 
-export default function CalendarContainer() {
+export default function WeekContainer() {
   const classes = useStyles();
 
   const [expanded, setExpanded] = React.useState('panel1');
@@ -116,56 +115,50 @@ export default function CalendarContainer() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth='lg'>
-        <div className={classes.logo}>
-          <Link href='/'>
-            <img src={logo} alt='' />
-          </Link>
-        </div>
         <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
-
           <ExpansionPanel square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <ExpansionPanelSummary aria-controls='panel1d-content' id='panel1d-header'>
-              <Typography>Month 1</Typography>
+              <Typography>Week 1</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <WeekContainer />
+                Days 
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
 
           <ExpansionPanel square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
             <ExpansionPanelSummary aria-controls='panel2d-content' id='panel2d-header'>
-              <Typography>Month 2</Typography>
+              <Typography>Week 2</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <WeekContainer />
+                Days
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
 
           <ExpansionPanel square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
             <ExpansionPanelSummary aria-controls='pane3d-content' id='panel3d-header'>
-              <Typography>Month 3</Typography>
+              <Typography>Week 3</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <WeekContainer />
+                Days
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
 
-          {/* <Grid container spacing={2}>
-            {months.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
-            ))}
-          </Grid> */}
-
-          <Button className={classes.mainGrid} variant='contained' color='primary' href='dashboard'>
-            BACK TO DASHBOARD
-          </Button>
+          <ExpansionPanel square expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+            <ExpansionPanelSummary aria-controls='pane3d-content' id='panel3d-header'>
+              <Typography>Week 4</Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Typography>
+               Days
+              </Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
         </main>
       </Container>
     </React.Fragment>
