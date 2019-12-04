@@ -1,5 +1,5 @@
-import { createMuiTheme } from '@material-ui/core/styles';
-import { lighten } from 'material-ui/utils/colorManipulator';
+import { createMuiTheme } from "@material-ui/core/styles";
+import { lighten } from "material-ui/utils/colorManipulator";
 
 export const theme = createMuiTheme({
   type: "dark",
@@ -18,7 +18,7 @@ export const theme = createMuiTheme({
     },
 
     textColor: "#E0E0E0",
-    backgroundColor: "#070707",
+    backgroundColor: "#070707"
   },
   typography: {
     useNextVariants: true,
@@ -30,75 +30,84 @@ export const theme = createMuiTheme({
       fontSize: "4rem",
       fontWeight: "400",
       lineHeight: "1.25",
-      fontFamily: "'Exo 2', sans-serif",
+      fontFamily: "'Exo 2', sans-serif"
     },
     h2: {
       fontSize: "3rem",
       fontWeight: "600",
       lineHeight: "1.25",
-      fontFamily: "'Exo 2', sans-serif",
+      fontFamily: "'Exo 2', sans-serif"
     },
     h3: {
       fontSize: "2.5rem",
       fontWeight: "600",
       lineHeight: "1.25",
-      fontFamily: "'Exo 2', sans-serif",
+      fontFamily: "'Exo 2', sans-serif"
     },
     h4: {
       fontSize: "2rem",
       fontWeight: "800",
-      lineHeight: "1.25",
+      lineHeight: "1.25"
     },
     h5: {
       fontSize: "1.5rem",
       fontWeight: "600",
       lineHeight: "1.20",
-      fontFamily: "'Exo 2', sans-serif",
+      fontFamily: "'Exo 2', sans-serif"
     },
     h6: {
       fontSize: "1rem",
       fontWeight: "600",
       color: "inherit",
-      lineHeight: "1.20",
+      lineHeight: "1.20"
     },
     body1: {
       fontSize: "1rem",
       fontWeight: "400",
-      lineHeight: "1.5",
+      lineHeight: "1.5"
     },
     body2: {
       fontSize: "1rem",
       fontWeight: "600",
-      lineHeight: "1.5",
+      lineHeight: "1.5"
     },
 
     button: {
       fontSize: "1rem",
       fontWeight: "600",
-      textTransform: "none",
+      textTransform: "none"
     },
 
     caption: {
       fontSize: "0.75rem",
-      fontWeight: "600",
+      fontWeight: "600"
     },
 
     overline: {
       fontSize: "0.75rem",
       fontWeight: "400",
-      textTransform: "none",
-    },
+      textTransform: "none"
+    }
   },
   overrides: {
     MuiOutlinedInput: {
       root: {
         "& > $notchedOutline": {
-          borderColor: lighten("#070707", 0.12), backgroundColor: lighten("#070707", 0.2), color: 'white'
+          borderColor: lighten("#070707", 0.12),
+          backgroundColor: lighten("#070707", 0.2),
+          color: "white"
         },
         " MuiCardMedia-media": {
-          height: "250px",
-      },
+          height: "250px"
+        }
       }
     },
+    MuiExpansionPanelSummary: {
+      root: {
+        "& > .MuiExpansionPanelSummary-content": {
+          flexGrow: "0"
+        }
+      }
+    }
   }
-})
+});

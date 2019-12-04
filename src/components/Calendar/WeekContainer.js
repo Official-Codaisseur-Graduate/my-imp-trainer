@@ -4,21 +4,16 @@ import MuiExpansionPanel from "@material-ui/core/ExpansionPanel";
 import MuiExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import MuiExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
-import MainFeaturedPost from "./MainFeaturedPost";
-import FeaturedPost from "./FeaturedPost";
-import WeekContainer from "./WeekContainer";
-import { Link, CardContent } from "@material-ui/core";
-import logo from "../../images/logo.png";
+import Grid from "@material-ui/core/Grid";
+import Day from "./Day";
+import List from "@material-ui/core/List";
 
 const ExpansionPanel = withStyles({
   root: {
     border: "1px solid rgba(0, 0, 0, .125)",
-    margin: "0 auto",
     boxShadow: "none",
     "&:not(:last-child)": {
       borderBottom: 0
@@ -37,11 +32,10 @@ const ExpansionPanelSummary = withStyles({
   root: {
     backgroundColor: "rgba(0, 0, 0, .03)",
     borderBottom: "1px solid rgba(0, 0, 0, .125)",
-    margin: "0 auto",
-    textAlign: "center",
     marginBottom: -1,
     minHeight: 56,
-    flexGrow: "0 !important",
+    flexGrow: 0,
+    width: "290px",
     "&$expanded": {
       minHeight: 56
     }
@@ -49,7 +43,8 @@ const ExpansionPanelSummary = withStyles({
   content: {
     "&$expanded": {
       margin: "12px 0",
-      flexGrow: 0
+      flexGrow: 0,
+      width: "290px"
     }
   },
   expanded: {}
@@ -62,6 +57,11 @@ const ExpansionPanelDetails = withStyles(theme => ({
 }))(MuiExpansionPanelDetails);
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    width: "100%",
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper
+  },
   mainGrid: {
     marginTop: theme.spacing(3)
   },
@@ -80,35 +80,66 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const mainFeaturedPost = {
-  title: "Workout of the Day",
-  image: "https://source.unsplash.com/featured/?{weightlifting}",
-  imgText: "main image description",
-  linkText: "Continue to today's workout."
-};
-
-const months = [
+const days = [
   {
-    title: "Month 1",
-    date: "19 workouts",
-    image: "https://source.unsplash.com/featured/?{crossfit},{wod}",
-    imageText: "Image Text"
-  },
-  {
-    title: "Month 2",
-    date: "21 workouts",
+    id: 1,
+    day: "Day 1",
     image: "https://source.unsplash.com/featured/?{weightlifting}",
-    imageText: "Image Text"
+    workouts: [1, 2],
+    required: true,
+    category: 1
   },
   {
-    title: "Month 3",
-    date: "18 workouts",
-    image: "https://source.unsplash.com/featured/?{calisthenics}",
-    imageText: "Image Text"
+    id: 2,
+    day: "Day 2",
+    image: "https://source.unsplash.com/featured/?{gym}",
+    workouts: [2, 3],
+    required: true,
+    category: 1
+  },
+  {
+    id: 3,
+    day: "Day 3",
+    image: "https://source.unsplash.com/featured/?{crossfit}",
+    workouts: [3, 1],
+    required: true,
+    category: 1
+  },
+  {
+    id: 4,
+    day: "Day 4",
+    image: "https://source.unsplash.com/featured/?{fitness}",
+    workouts: [1, 3, 1],
+    required: true,
+    category: 1
+  },
+  {
+    id: 5,
+    day: "Day 5",
+    image: "https://source.unsplash.com/featured/?{sports}",
+    workouts: [1, 4],
+    required: false,
+    category: 1
+  },
+  {
+    id: 6,
+    day: "Day 6",
+    image: "https://source.unsplash.com/featured/?{coding}",
+    workouts: [1, 5],
+    required: true,
+    category: 1
+  },
+  {
+    id: 7,
+    day: "Day 7",
+    image: "https://source.unsplash.com/featured/?{avatar}",
+    workouts: [],
+    required: true,
+    category: 1
   }
 ];
 
-export default function CalendarContainer() {
+export default function WeekContainer() {
   const classes = useStyles();
 
   const [expanded, setExpanded] = React.useState("panel1");
@@ -121,14 +152,7 @@ export default function CalendarContainer() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <div className={classes.logo}>
-          <Link href="/">
-            <img src={logo} alt="" />
-          </Link>
-        </div>
         <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
-
           <ExpansionPanel
             square
             expanded={expanded === "panel1"}
@@ -138,22 +162,17 @@ export default function CalendarContainer() {
               aria-controls="panel1d-content"
               id="panel1d-header"
             >
-              <CardContent>
-                <Typography component="h2" variant="h5">
-                  Month 1
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
-                  Amount of workouts
-                </Typography>
-                <Typography variant="subtitle1" paragraph></Typography>
-                <Typography variant="subtitle1" color="primary">
-                  Explore your schedule.
-                </Typography>
-              </CardContent>
+              <Typography>Week 1</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <WeekContainer />
+                {/* <Grid container spacing={2}> */}
+                <List className={classes.root}>
+                  {days.map(day => (
+                    <Day key={day.id} day={day} />
+                  ))}
+                </List>
+                {/* </Grid> */}
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -167,22 +186,15 @@ export default function CalendarContainer() {
               aria-controls="panel2d-content"
               id="panel2d-header"
             >
-              <CardContent>
-                <Typography component="h2" variant="h5">
-                  Month 2
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
-                  Amount of workouts
-                </Typography>
-                <Typography variant="subtitle1" paragraph></Typography>
-                <Typography variant="subtitle1" color="primary">
-                  Explore your schedule.
-                </Typography>
-              </CardContent>
+              <Typography>Week 2</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <WeekContainer />
+                <List className={classes.root}>
+                  {days.map(day => (
+                    <Day key={day.id} day={day} />
+                  ))}
+                </List>
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -196,40 +208,40 @@ export default function CalendarContainer() {
               aria-controls="pane3d-content"
               id="panel3d-header"
             >
-              <CardContent>
-                <Typography component="h2" variant="h5">
-                  Month 3
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
-                  Amount of workouts
-                </Typography>
-                <Typography variant="subtitle1" paragraph></Typography>
-                <Typography variant="subtitle1" color="primary">
-                  Explore your schedule.
-                </Typography>
-              </CardContent>
+              <Typography>Week 3</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <WeekContainer />
+                <List className={classes.root}>
+                  {days.map(day => (
+                    <Day key={day.id} day={day} />
+                  ))}
+                </List>
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
 
-          {/* <Grid container spacing={2}>
-            {months.map(post => (
-              <FeaturedPost key={post.title} post={post} />
-            ))}
-          </Grid> */}
-
-          <Button
-            className={classes.mainGrid}
-            variant="contained"
-            color="primary"
-            href="dashboard"
+          <ExpansionPanel
+            square
+            expanded={expanded === "panel4"}
+            onChange={handleChange("panel4")}
           >
-            BACK TO DASHBOARD
-          </Button>
+            <ExpansionPanelSummary
+              aria-controls="pane3d-content"
+              id="panel3d-header"
+            >
+              <Typography>Week 4</Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Typography>
+                <List className={classes.root}>
+                  {days.map(day => (
+                    <Day key={day.id} day={day} />
+                  ))}
+                </List>
+              </Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
         </main>
       </Container>
     </React.Fragment>
