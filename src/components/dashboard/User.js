@@ -11,7 +11,7 @@ const User = (props) => {
     return (
         <div className={classes.userCard}>
             <PersonIcon className={classes.user}/>
-            <Typography variant='subtitle'>John Snow</Typography>
+            <Typography variant='subtitle1'>John Snow</Typography>
         </div>
     );
 };

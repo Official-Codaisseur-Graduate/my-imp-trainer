@@ -13,12 +13,23 @@ import Container from "@material-ui/core/Container";
 import logo from "../../images/logo.png";
 import { Done, ArrowRight, ArrowLeft } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import Trophy from '../trophy/Trophy';
 
 class Video extends React.Component {
-  finishWorkout = () => {};
+  state ={ trophy: false}
+  finishWorkout = () => {
+    this.setState({
+      trophy: true
+    })
+  };
+
+
 
   render() {
     const { classes } = this.props;
+    if(this.state.trophy){
+      return <Trophy/>
+    } else{
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -75,12 +86,12 @@ class Video extends React.Component {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link to="/" variant="body2">
+              <Link to="/dashboard" variant="body2">
                 <ArrowLeft className={classes.arrow} /> My profile
               </Link>
             </Grid>
             <Grid item xs>
-              <Link to="/" variant="body2">
+              <Link to="/calendar" variant="body2">
                 My calendar <ArrowRight className={classes.arrow} />
               </Link>
             </Grid>
@@ -88,7 +99,7 @@ class Video extends React.Component {
         </div>
         <Box mt={8}></Box>
       </Container>
-    );
+    );}
   }
 }
 
