@@ -12,6 +12,7 @@ const User = (props) => {
             {/* <PersonIcon className={classes.user}/> */}
             <Avatar src={props.userImage}/>
             <Typography variant='subtitle1'>{props.userName}</Typography>
+
         </div>
     );
 };
