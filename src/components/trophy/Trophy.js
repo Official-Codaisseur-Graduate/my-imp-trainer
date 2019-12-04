@@ -64,14 +64,14 @@ const useStyles = makeStyles({
   },  
 });
 
-export default function Trophy() {
+export default function Trophy(props) {
   const classes = useStyles();
 
 
   return (
     <Card className={classes.card}>
       <CardActionArea>
-        <img src={progress.workout} className={classes.cardMedia}
+        <img src={progress[props.achievement]} className={classes.cardMedia}
           component="img"
           alt="Contemplative Reptile"
         />
@@ -80,7 +80,7 @@ export default function Trophy() {
             Well Done! 
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p" className={classes.content}>
-            {content.workout}
+            {content[props.achievement]}
           </Typography>
         </CardContent>
       </CardActionArea>

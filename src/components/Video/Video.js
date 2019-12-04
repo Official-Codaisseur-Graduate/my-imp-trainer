@@ -16,10 +16,12 @@ import { Link } from "react-router-dom";
 import Trophy from '../trophy/Trophy';
 
 class Video extends React.Component {
-  state ={ trophy: false}
+  state ={ trophy: false,
+  achievement: ''}
   finishWorkout = () => {
     this.setState({
-      trophy: true
+      trophy: true,
+      achievement: 'week'
     })
   };
 
@@ -28,7 +30,7 @@ class Video extends React.Component {
   render() {
     const { classes } = this.props;
     if(this.state.trophy){
-      return <Trophy/>
+      return <Trophy achievement={this.state.achievement}/>
     } else{
     return (
       <Container component="main" maxWidth="xs">
@@ -80,6 +82,7 @@ class Video extends React.Component {
             variant="contained"
             color="primary"
             className={classes.submit}
+            
           >
             <Done />
             Done!
