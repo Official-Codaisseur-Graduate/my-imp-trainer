@@ -1,6 +1,8 @@
+import { textAlign } from "@material-ui/system";
+
 export default theme => ({
   paper: {
-    paddingTop: theme.spacing(3),
+    paddingTop: theme.spacing(2),
     display: "flex",
     flexDirection: "column",
     alignItems: "center"
@@ -16,7 +18,8 @@ export default theme => ({
     }
   },
   title: {
-    marginBottom: "10px"
+    marginBottom: "5px",
+    textAlign: "center"
   },
   submit: {
     margin: theme.spacing(3, 0, 2)

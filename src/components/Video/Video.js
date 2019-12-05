@@ -14,6 +14,8 @@ import logo from "../../images/logo.png";
 import { Done, ArrowRight, ArrowLeft } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import Trophy from '../trophy/Trophy';
+import { workouts } from '../../data';
+
 
 class Video extends React.Component {
   state ={ trophy: false,
@@ -21,13 +23,17 @@ class Video extends React.Component {
   finishWorkout = () => {
     this.setState({
       trophy: true,
-      achievement: 'week'
+      achievement: 'workout'
     })
   };
 
-
+  
+  
 
   render() {
+    const  random =  Math.floor(Math.random() *5);
+    
+
     const { classes } = this.props;
     if(this.state.trophy){
       return <Trophy achievement={this.state.achievement}/>
@@ -45,34 +51,34 @@ class Video extends React.Component {
             variant="h5"
             color="primary"
           >
-            Workout for today
+            {this.props.title || workouts[random].title} 
           </Typography>
           <video
             className={classes.video}
             controls
             autoPlay
-            src={this.props.src || "https://youtu.be/W86cTIoMv2U"}
+            src={this.props.src || workouts[random].videoUrl}
           />
-          <Typography component="p">
-            {this.props.title || "this is description about the video"}
+          <Typography className={classes.title} component="p">
+           {this.props.title || workouts[random].description} 
           </Typography>
           <Grid container spacing={3}>
             <Grid item xs={4}>
               <Paper className={classes.grid}>
                 <p>Kcal</p>
-                <p>{this.props.calories || "xxx"}</p>
+                <p>{this.props.calories || workouts[random].calories}</p>
               </Paper>
             </Grid>
             <Grid item xs={4}>
               <Paper className={classes.grid}>
                 <p>Time</p>
-                <p>{this.props.time || "xxx"}</p>
+                <p>{this.props.time || workouts[random].totalTime*0.0001}</p>
               </Paper>
             </Grid>
             <Grid item xs={4}>
               <Paper className={classes.grid}>
                 <p>Level</p>
-                <p>{this.props.fifficulty || "xxx"}</p>
+                <p>{this.props.fifficulty || workouts[random].difficulty}</p>
               </Paper>
             </Grid>
           </Grid>
