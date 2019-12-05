@@ -76,6 +76,10 @@ export default theme => ({
     color: theme.palette.primary.main,
     position:'relative'
   },
+  streakTitle: {
+    marginTop: '2vh', 
+    lineHeight: "6vh"
+  },
   streakImg: {
     width: '25vw',
   },
@@ -89,5 +93,11 @@ export default theme => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: 'space-around'
+  },
+  '@media (min-width: 800px)': {
+  streakImg: {
+      maxHeight: '24vh',
+      width: 'auto'
+    },
   }
 });

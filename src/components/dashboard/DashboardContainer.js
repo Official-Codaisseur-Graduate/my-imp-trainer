@@ -44,11 +44,11 @@ class DashboardContainer extends Component {
             <Typography
               variant="h6"
               color="primary"
-              style={{marginTop: '2vh', lineHeight: "6vh" }}
+              className={classes.streakTitle}
             >
               You are on a 4 day streak !
             </Typography>
-            <img src={happy} className={classes.streakImg} />
+            <img src={happy} className={classes.streakImg} alt="streak" />
           </Paper>
           <div className={classes.linkBtns}>
             <Link to={`calendar`}>
