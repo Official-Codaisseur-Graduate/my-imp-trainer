@@ -17,7 +17,7 @@ import Trophy from "../trophy/Trophy";
 import { connect } from "react-redux";
 
 class Video extends React.Component {
-  state = { trophy: false, achievement: "" };
+  state = { trophy: false, achievement: "", workouts: [] };
 
   finishWorkout = async id => {
     await this.props.dispatch({
@@ -111,9 +111,9 @@ class Video extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    workouts: state.workouts
+    workouts: state
   };
 };
 
-export default connect(mapStateToProps);
-withStyles(styles)(Video);
+export default withStyles(styles)(connect(mapStateToProps)(Video));
+//
