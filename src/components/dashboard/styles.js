@@ -1,21 +1,17 @@
 export default theme => ({
   userCard: {
-    padding: "1vh",
     marginTop: '2vh',
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     width: "40%",
-    border: "1px solid",
-    borderColor: theme.palette.primary.dark,
-    borderRadius: "20px",
     margin: "0 auto"
   },
-  user: {
-    border: "1px solid red",
-    padding: "2vh",
-    borderRadius: "50%",
-    marginBottom: '2vh'
+  userImage: { 
+    border: "3px solid",
+    borderColor: theme.palette.primary.dark,
+    width: '20vw',
+    height: '20vw'
   },
   progressBar: {
     margin: "2vh auto",
