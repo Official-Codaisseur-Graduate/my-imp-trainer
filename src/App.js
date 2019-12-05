@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
-import Login from './components/Login';
+import Login from './components/login/Login';
 import CalendarContainer from './components/Calendar/CalendarContainer';
 // import ScheduleContainer from './components/Schedule/ScheduleContainer';
 import DashboardContainer from './components/dashboard/DashboardContainer';

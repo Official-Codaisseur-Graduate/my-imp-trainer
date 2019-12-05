@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import styles from "./styles/styles";
+import styles from "./styles";
 
 const ProgressBarFiller = props => {
   const { classes } = props;

@@ -4,7 +4,7 @@ import Tracker from "./Tracker";
 import ProgressBar from "./ProgressBar";
 import logo from "../../images/logo.png";
 import { withStyles } from "@material-ui/core/styles";
-import styles from "./styles/styles";
+import styles from "./styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";

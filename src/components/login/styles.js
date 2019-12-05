@@ -1,14 +1,15 @@
-import { textAlign } from "@material-ui/system";
-
 export default theme => ({
   paper: {
-    paddingTop: theme.spacing(2),
+    paddingTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
     alignItems: "center"
   },
   logo: {
     width: "100%",
+    marginRight: "0",
+    marginBottom: "6%",
+    marginTop: "1%",
 
     "& img": {
       width: "80%",
@@ -17,15 +18,12 @@ export default theme => ({
       marginTop: "1%"
     }
   },
-  title: {
-    marginBottom: "5px",
-    textAlign: "center"
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(1)
   },
   submit: {
     margin: theme.spacing(3, 0, 2)
-  },
-  video: {
-    width: "90vw"
   },
   container: {
     backgroundColor: theme.palette.backgroundColor
@@ -33,17 +31,4 @@ export default theme => ({
   textField: {
     outlineColor: theme.palette.textColor
   },
-  arrow: {
-    verticalAlign: "bottom"
-  },
-  grid: {
-    marginTop: theme.spacing(2),
-    backgroundColor: "#383838",
-    color: "white",
-    height: "50px",
-    "& p": {
-      marginBottom: "1%",
-      marginTop: "1%"
-    }
-  }
 });
