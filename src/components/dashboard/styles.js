@@ -1,21 +1,17 @@
 export default theme => ({
   userCard: {
-    padding: "1vh",
-    marginTop: '2vh',
+    marginTop: "2vh",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     width: "40%",
-    border: "1px solid",
-    borderColor: theme.palette.primary.dark,
-    borderRadius: "20px",
     margin: "0 auto"
   },
-  user: {
-    border: "1px solid red",
-    padding: "2vh",
-    borderRadius: "50%",
-    marginBottom: '2vh'
+  userImage: {
+    border: "3px solid",
+    borderColor: theme.palette.primary.dark,
+    width: "20vw",
+    height: "20vw"
   },
   progressBar: {
     margin: "2vh auto",
@@ -39,12 +35,17 @@ export default theme => ({
   },
   tracker: {
     marginTop: "2vh",
-    width: "30vw",
+    width: "30vw"
+  },
+  trackerIcon: {
+    color: 'white',
+    margin: '0 auto',
+    paddingBottom: '0',
   },
   trackerContent: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around'
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around"
   },
   progressPercentage: {
     marginLeft: "13vw",
@@ -53,27 +54,40 @@ export default theme => ({
     justifyContent: "flex-start"
   },
   calendarBtn: {
-    height: "17vh",
-    width: "17vh",
+    width: "35vw",
+    height: "15vh",
     background: theme.palette.primary.main,
     color: theme.palette.textColor
   },
   startWorkoutBtn: {
-    height: "12vh",
-    width: "80vw",
-    marginTop: '4vh',
+    width: "35vw",
+    height: "15vh",
     background: theme.palette.secondary.main,
     color: theme.palette.textColor
   },
   streak: {
-    height: "17vh",
-    width: "17vh",
-    background: theme.palette.textColor,
+    height: "32vh",
+    width: "37vw",
+    display: 'flex', 
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    background: '#EAF8F9',
     color: theme.palette.primary.main,
+    position:'relative'
   },
-  lowerDashboard: { 
-    marginTop: '5vh',
-    display: "flex", 
+  streakImg: {
+    width: '25vw',
+  },
+  lowerDashboard: {
+    marginTop: "5vh",
+    display: "flex",
     flexDirection: "row",
-    justifyContent: 'space-around' }
+    justifyContent: "space-around"
+  },
+  linkBtns: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: 'space-around'
+  }
 });
