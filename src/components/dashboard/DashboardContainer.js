@@ -9,9 +9,10 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { profiles, users } from "../../data.js";
-import { Link } from 'react-router-dom';
-import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
-import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+import { Link } from "react-router-dom";
+import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
+import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
+import happy from "../../images/happy.jpg";
 
 class DashboardContainer extends Component {
   state = { profile: profiles[0], users: users };
@@ -19,14 +20,19 @@ class DashboardContainer extends Component {
   render() {
     const { classes } = this.props;
     console.log("STATE", this.state);
-    const user = this.state.users.find(user=>user.id === this.state.profile.userId);
+    const user = this.state.users.find(
+      user => user.id === this.state.profile.userId
+    );
     const userName = `${user.firstName} ${user.lastName}`;
     return (
       <div>
         <div>
           <img src={logo} style={{ width: "50vh" }} alt="logo" />
         </div>
-        <User userImage={this.state.profile.imageUrl} userName={userName}></User>
+        <User
+          userImage={this.state.profile.imageUrl}
+          userName={userName}
+        ></User>
         <ProgressBar percentage={33} />
         <div className={classes.trackers}>
           <Tracker title="Calories burned this week" number="340" />
@@ -38,22 +44,27 @@ class DashboardContainer extends Component {
             <Typography
               variant="h6"
               color="primary"
-              style={{ height: "6vh", lineHeight: "8vh" }}
+              style={{marginTop: '2vh', lineHeight: "6vh" }}
             >
               You are on a 4 day streak !
             </Typography>
+            <img src={happy} className={classes.streakImg} />
           </Paper>
-          <Link to={`calendar`}>
-          <Button className={classes.calendarBtn}>
-            <CalendarTodayIcon/>Go to calendar
-          </Button>
-          </Link>
+          <div className={classes.linkBtns}>
+            <Link to={`calendar`}>
+              <Button className={classes.calendarBtn}>
+                <CalendarTodayIcon />
+                Go to calendar
+              </Button>
+            </Link>
+            <Link to={`video/${user.id}`}>
+              <Button className={classes.startWorkoutBtn}>
+                <FitnessCenterIcon />
+                &emsp;Start your workout
+              </Button>
+            </Link>
+          </div>
         </div>
-          <Link to={`video/${user.id}`}>
-          <Button className={classes.startWorkoutBtn}>
-            <FitnessCenterIcon/>&emsp;Start your workout
-          </Button>
-          </Link>
       </div>
     );
   }
