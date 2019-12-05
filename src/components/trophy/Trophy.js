@@ -10,6 +10,7 @@ import trophy from "./trophy.png";
 import star from "./star.png";
 import program from "./program.png";
 import  { Link } from 'react-router-dom';
+import Container from "@material-ui/core/Container";
 
 //here is the pictures for the three options 
 const progress = {
@@ -68,7 +69,7 @@ export default function Trophy(props) {
   const classes = useStyles();
 
 
-  return (
+  return (<Container component="main" maxWidth="xs">
     <Card className={classes.card}>
       <CardActionArea>
         <img src={progress[props.achievement]} className={classes.cardMedia}
@@ -95,6 +96,6 @@ export default function Trophy(props) {
         </Button>
         </Link>
       </CardActions>
-    </Card>
+    </Card></Container>
   );
 }
