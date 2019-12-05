@@ -37,6 +37,11 @@ export default theme => ({
     marginTop: "2vh",
     width: "30vw"
   },
+  trackerIcon: {
+    color: 'white',
+    margin: '0 auto',
+    paddingBottom: '0',
+  },
   trackerContent: {
     display: "flex",
     flexDirection: "column",

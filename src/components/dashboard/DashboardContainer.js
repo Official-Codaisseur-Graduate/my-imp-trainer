@@ -35,9 +35,9 @@ class DashboardContainer extends Component {
         ></User>
         <ProgressBar percentage={33} />
         <div className={classes.trackers}>
-          <Tracker title="Calories burned this week" number="340" />
-          <Tracker title="Hours spent working out this week" number="3.5" />
-          <Tracker title="Workouts completed so far" number="4" />
+          <Tracker icon='kcal' number="340 kcal" />
+          <Tracker icon='time' number="3.5 hours" />
+          <Tracker icon='completed' number="4 workouts" />
         </div>
         <div className={classes.lowerDashboard}>
           <Paper className={classes.streak}>
