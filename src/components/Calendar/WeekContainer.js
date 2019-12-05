@@ -85,7 +85,7 @@ export default function WeekContainer() {
   const classes = useStyles();
 
   const week = calendar.slice(0, 7);
-  console.log(week);
+  // console.log(week);
 
   const [expanded, setExpanded] = React.useState('panel1');
 
@@ -121,11 +121,11 @@ export default function WeekContainer() {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <List className={classes.root}>
+                {/* <List className={classes.root}>
                   {week.map((day) => (
                     <Day key={day.id} day={day} />
                   ))}
-                </List>
+                </List> */}
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -136,11 +136,11 @@ export default function WeekContainer() {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <List className={classes.root}>
+                {/* <List className={classes.root}>
                   {week.map((day) => (
                     <Day key={day.id} day={day} />
                   ))}
-                </List>
+                </List> */}
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -151,11 +151,11 @@ export default function WeekContainer() {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <List className={classes.root}>
+                {/* <List className={classes.root}>
                   {week.map((day) => (
                     <Day key={day.id} day={day} />
                   ))}
-                </List>
+                </List> */}
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>

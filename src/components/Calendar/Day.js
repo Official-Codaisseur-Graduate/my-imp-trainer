@@ -1,16 +1,19 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+// import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
+// import Link from 'react-router-dom';
+import { Link as Route } from 'react-router-dom';
 
 export default function Day(props) {
-  const { calendar } = props;
+  // const { calendar } = props;
   const { day } = props;
   const { workouts } = props;
-  console.log('Calendar:', calendar);
-  console.log('Day:', day);
-  console.log('Workouts:', workouts);
+  // console.log('Calendar:', calendar);
+  // console.log('Day:', day);
+  // console.log('Workouts:', workouts);
 
   const images = [
     {
@@ -36,36 +39,26 @@ export default function Day(props) {
     }
   ];
 
-  const second = day.workouts.length !== 0 ? `${day.workouts.length} workouts` : `Rest day`;
+  const second = day.workouts.length !== 0 ? `${day.workouts.length} workouts:` : `Rest day`;
 
-  const workout = day.workouts[0];
+  const workoutOne = day.workouts[0];
+  const workoutTwo = day.workouts[1];
 
-  const filtered = workouts.map((object) => {
-    return object.title;
-  });
+  // const workoutOne = calendar.map((object) => {
+  //   return object.workouts[0];
+  // });
 
-  const workoutOne = calendar.map((object) => {
-    return object.workouts[0];
-  });
+  // const workoutTwo = calendar.map((object) => {
+  //   return object.workouts[1];
+  // });
 
-  const workoutTwo = calendar.map((object) => {
-    return object.workouts[1];
-  });
-
-  const mappedId = workouts.map((object) => {
-    return object.id;
-  });
+  // const mappedId = workouts.map((object) => {
+  //   return object.id;
+  // });
 
   const mappedTitle = workouts.map((object) => {
     return object.title;
   });
-
-  console.log('Workout:', workout);
-  console.log('filtered:', filtered);
-  console.log('workoutOne:', workoutOne);
-  console.log('workoutTwo:', workoutTwo);
-  console.log('mappedId:', mappedId);
-  console.log('mappedTitle:', mappedTitle);
 
   const firstWorkout = () => {
     if (workoutOne === 1) {
@@ -78,6 +71,8 @@ export default function Day(props) {
       return mappedTitle[3];
     } else if (workoutOne === 5) {
       return mappedTitle[4];
+    } else {
+      return;
     }
   };
 
@@ -92,6 +87,8 @@ export default function Day(props) {
       return mappedTitle[3];
     } else if (workoutTwo === 5) {
       return mappedTitle[4];
+    } else {
+      return;
     }
   };
 
@@ -103,8 +100,18 @@ export default function Day(props) {
           {/* style={{ width: '60px' }}  */}
         </Avatar>
       </ListItemAvatar>
-      <ListItemText primary={`Day ${day.day}, ${second}`} secondary={firstWorkout()} />
-      {/* secondary='Two workouts' */}
+      {/* <ListItemText
+          primary={`Day ${day.day}, ${second}`}
+          secondary={`${firstWorkout()} & ${secondWorkout()}`}
+          // Workouts:
+        /> */}
+      <Typography variant='p' color='inherit'>
+        {`Day ${day.day}, ${second}`}
+        <br></br>
+        <Route to={`/video/${day.id}`}>{`${firstWorkout()}`}</Route>
+        {` & `}
+        <Route to={`/video/${day.id}`}>{`${secondWorkout()}`}</Route>
+      </Typography>
     </ListItem>
   );
 }
