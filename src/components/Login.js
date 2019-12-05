@@ -96,7 +96,7 @@ export default function Login() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Route to={'/'}>
+          <Route to={'/dashboard'}>
           <Button
             type="submit"
             fullWidth

@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import { Link as Route}  from "react-router-dom";
 
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
+            <Route to={"https://material-ui.com/"}color="inherit">
                 Your Website
-      </Link>{' '}
+      </Route>{' '}
             {new Date().getFullYear()}
             {'.'}
         </Typography>

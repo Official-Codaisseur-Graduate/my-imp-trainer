@@ -14,6 +14,7 @@ import FeaturedPost from "./FeaturedPost";
 import WeekContainer from "./WeekContainer";
 import { Link, CardContent } from "@material-ui/core";
 import logo from "../../images/logo.png";
+import { Link as Route} from "react-router-dom";
 
 const ExpansionPanel = withStyles({
   root: {
@@ -122,9 +123,9 @@ export default function CalendarContainer() {
       <CssBaseline />
       <Container maxWidth="lg">
         <div className={classes.logo}>
-          <Link href="/">
+        <Route to={'/'}>
             <img src={logo} alt="" />
-          </Link>
+          </Route>
         </div>
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
@@ -221,15 +222,14 @@ export default function CalendarContainer() {
               <FeaturedPost key={post.title} post={post} />
             ))}
           </Grid> */}
-
+          <Route to={'/dashboard'}>
           <Button
             className={classes.mainGrid}
             variant="contained"
             color="primary"
-            href="dashboard"
           >
             BACK TO DASHBOARD
-          </Button>
+          </Button></Route>
         </main>
       </Container>
     </React.Fragment>
