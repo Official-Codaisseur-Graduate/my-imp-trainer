@@ -10,6 +10,7 @@ import { theme } from './styles/theme';
 import { spring, AnimatedSwitch } from 'react-router-transition';
 import Trophy from './components/trophy/Trophy';
 import Video from './components/Video/Video';
+import Notfound from './components/Notfound';
 
 // we need to map the `scale` prop we define below
 // to the transform style property
@@ -64,6 +65,8 @@ function App() {
           <Route exact path='/calendar' component={CalendarContainer} />
           <Route path='/dashboard' component={DashboardContainer} />
           <Route exact path='/video/:userId' component={Video} />
+          
+          <Route component={Notfound} />
         </AnimatedSwitch>
       </ThemeProvider>
     </div>
