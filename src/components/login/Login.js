@@ -13,12 +13,12 @@ import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import logo from "../../images/logo.png";
 import { Link as Route } from "react-router-dom";
+import { users } from "../../data.js";
 
 class Login extends Component {
   handleChange = event => {
     const value = event.target.value;
     const name = event.target.name;
-
     this.setState({
       [name]: value
     });
@@ -26,8 +26,18 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
-    console.log("email and passowrd", this.state.email, this.state.password);
+    users.forEach(user => {
+      if (
+        user.email === this.state.emailAddress &&
+        user.password === this.state.password
+      ) {
+        this.props.history.push("/dashboard");
+      } else {
+        this.setState({
+          failedAuth: true
+        });
+      }
+    });
   };
   render() {
     const { classes } = this.props;
@@ -54,17 +64,18 @@ class Login extends Component {
                 margin="normal"
                 required
                 fullWidth
+                label="Email Address"
                 id="email"
                 placeholder="Email Address"
                 name="email"
                 autoComplete="email"
                 onChange={this.handleChange}
-                label="Email Address"
               />
               <TextField
                 className={classes.textField}
                 variant="outlined"
                 margin="normal"
+                label="Password"
                 required
                 fullWidth
                 name="password"
@@ -73,13 +84,17 @@ class Login extends Component {
                 id="password"
                 autoComplete="current-password"
                 onChange={this.handleChange}
-                label="password"
               />
               {/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           /> */}
               {/* <Route to={"/dashboard"}> */}
+              {this.state && this.state.failedAuth ? (
+                <Typography>
+                  <em>The email or password is incorrect</em>
+                </Typography>
+              ) : null}
               <Button
                 type="submit"
                 fullWidth
@@ -89,7 +104,6 @@ class Login extends Component {
               >
                 Sign In
               </Button>
-              {/* </Route> */}
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">

@@ -94,18 +94,15 @@ export const theme = createMuiTheme({
       root: {
         "& > $notchedOutline": {
           borderColor: lighten("#070707", 0.7),
-          // backgroundColor: lighten("#070707", 0.5),
+          //backgroundColor: 'white',
           color: "white"
         },
-        "& > .MuiInputBase-input" : {
-          color: '#FB1565',
+        "& > .MuiInputBase-input": {
+          color: "#FB1565"
         },
-        "&::placeholder": {
-        color: "white"
-      },
         " MuiCardMedia-media": {
           height: "250px"
-        },
+        }
       }
     },
     MuiExpansionPanelSummary: {
