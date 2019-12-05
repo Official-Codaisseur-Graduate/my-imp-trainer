@@ -93,13 +93,19 @@ export const theme = createMuiTheme({
     MuiOutlinedInput: {
       root: {
         "& > $notchedOutline": {
-          borderColor: lighten("#070707", 0.12),
-          backgroundColor: lighten("#070707", 0.2),
+          borderColor: lighten("#070707", 0.7),
+          // backgroundColor: lighten("#070707", 0.5),
           color: "white"
         },
+        "& > .MuiInputBase-input" : {
+          color:'white',
+        },
+        "&::placeholder": {
+        color: "white"
+      },
         " MuiCardMedia-media": {
           height: "250px"
-        }
+        },
       }
     },
     MuiExpansionPanelSummary: {

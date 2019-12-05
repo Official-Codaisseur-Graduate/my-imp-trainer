@@ -1,7 +1,7 @@
 import React from 'react';
 import PersonIcon from '@material-ui/icons/Person';
 import { withStyles } from '@material-ui/core/styles';
-import styles from './styles/styles';
+import styles from './styles';
 import { Typography, Avatar } from '@material-ui/core';
 
 
