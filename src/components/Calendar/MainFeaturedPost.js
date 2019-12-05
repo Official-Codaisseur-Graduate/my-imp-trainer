@@ -49,9 +49,6 @@ export default function MainFeaturedPost(props) {
             <Typography component='h1' variant='h3' color='inherit' gutterBottom>
               {post.title}
             </Typography>
-            <Typography variant='h5' color='inherit' paragraph>
-              {post.description}
-            </Typography>
             <Link variant='subtitle1' href='video/userId'>
               {post.linkText}
             </Link>
