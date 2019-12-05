@@ -98,7 +98,7 @@ export const theme = createMuiTheme({
           color: "white"
         },
         "& > .MuiInputBase-input" : {
-          color:'white',
+          color: '#FB1565',
         },
         "&::placeholder": {
         color: "white"

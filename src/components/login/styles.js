@@ -29,9 +29,6 @@ export default theme => ({
     backgroundColor: theme.palette.backgroundColor
   },
   textField: {
-    outlineColor: theme.palette.textColor,
+    outlineColor: theme.palette.textColor
   },
-  textFieldLabel: {
-      color:'white'
-  }
 });
