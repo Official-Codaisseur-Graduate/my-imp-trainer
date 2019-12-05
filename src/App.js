@@ -1,8 +1,8 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import './App.css';
-import Login from './components/Login';
-import CalendarContainer from './components/Calendar/CalendarContainer';
+import React from "react";
+import { Route } from "react-router-dom";
+import "./App.css";
+import Login from "./components/login/Login";
+import CalendarContainer from "./components/Calendar/CalendarContainer";
 // import ScheduleContainer from './components/Schedule/ScheduleContainer';
 import DashboardContainer from './components/dashboard/DashboardContainer';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -11,6 +11,8 @@ import { spring, AnimatedSwitch } from 'react-router-transition';
 import Trophy from './components/trophy/Trophy';
 import Video from './components/Video/Video';
 import Notfound from './components/Notfound';
+import store from "./store";
+import { Provider } from "react-redux";
 
 // we need to map the `scale` prop we define below
 // to the transform style property
@@ -52,6 +54,7 @@ const bounceTransition = {
 function App() {
   return (
     <div className='App'>
+      <Provider store={store}>
       <ThemeProvider theme={theme}>
       <AnimatedSwitch
     atEnter={bounceTransition.atEnter}
@@ -69,6 +72,7 @@ function App() {
           <Route component={Notfound} />
         </AnimatedSwitch>
       </ThemeProvider>
+      </Provider>
     </div>
   );
 }
