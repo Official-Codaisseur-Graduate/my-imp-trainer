@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import happy from '../../images/happy.jpg';
+import { connect } from "react-redux";
 
 class DashboardContainer extends Component {
   state = { user: users[0] };
@@ -23,6 +24,21 @@ class DashboardContainer extends Component {
     const userName = `${user.firstName} ${user.lastName}`;
     const userDate = Math.ceil((Date.parse(user.startDate) - Date.now()) / 8.64e7) * -1;
     const userProgress = Math.floor((userDate * 100) / 90);
+    const workout = ()=>{
+      if(this.props.workouts.length){
+        return <Link to={`video/${user.id}`}>
+        <Button className={classes.startWorkoutBtn}>
+          <FitnessCenterIcon />
+          &emsp;Start your workout
+        </Button>
+      </Link>
+      } else {
+        return <Button className={classes.startWorkoutBtn}>
+        <FitnessCenterIcon />
+        &emsp;No workouts left Today! 
+      </Button>
+      }
+    }
     return (
       <main>
         <div>
@@ -49,17 +65,18 @@ class DashboardContainer extends Component {
                 Go to calendar
               </Button>
             </Link>
-            <Link to={`video/${user.id}`}>
-              <Button className={classes.startWorkoutBtn}>
-                <FitnessCenterIcon />
-                &emsp;Start your workout
-              </Button>
-            </Link>
+           {workout()}
           </div>
         </div>
       </main>
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    workouts: state.workouts
+  };
+};
 
-export default withStyles(styles)(DashboardContainer);
+export default withStyles(styles)(connect(mapStateToProps)(DashboardContainer));
+
