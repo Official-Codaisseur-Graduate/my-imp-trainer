@@ -72,7 +72,7 @@ export default function Day(props) {
     } else if (workoutOne === 5) {
       return mappedTitle[4];
     } else {
-      return;
+      return '';
     }
   };
 
@@ -88,9 +88,11 @@ export default function Day(props) {
     } else if (workoutTwo === 5) {
       return mappedTitle[4];
     } else {
-      return;
+      return '';
     }
   };
+
+  const amp = firstWorkout() && secondWorkout() ? ` & ` : ``;
 
   return (
     <ListItem>
@@ -109,7 +111,7 @@ export default function Day(props) {
         {`Day ${day.day}, ${second}`}
         <br></br>
         <Route to={`/video/${day.id}`}>{`${firstWorkout()}`}</Route>
-        {` & `}
+        {amp}
         <Route to={`/video/${day.id}`}>{`${secondWorkout()}`}</Route>
       </Typography>
     </ListItem>

@@ -10,10 +10,10 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import MainFeaturedPost from './MainFeaturedPost';
 import WeekContainer from './WeekContainer';
-import { Link, CardContent } from '@material-ui/core';
+import { CardContent } from '@material-ui/core';
 import logo from '../../images/logo.png';
 import { calendar } from '../../data';
-import { Link as Route} from "react-router-dom";
+import { Link as Route } from 'react-router-dom';
 
 const ExpansionPanel = withStyles({
   root: {
@@ -117,7 +117,7 @@ export default function CalendarContainer() {
     })
     .reduce((total, workout) => total + workout, 0);
 
-  const [expanded, setExpanded] = React.useState('panel1');
+  const [expanded, setExpanded] = React.useState('panel');
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -128,8 +128,8 @@ export default function CalendarContainer() {
       <CssBaseline />
       <Container maxWidth='lg'>
         <div className={classes.logo}>
-        <Route to={'/'}>
-            <img src={logo} alt="" />
+          <Route to={'/'}>
+            <img src={logo} alt='' />
           </Route>
         </div>
         <main>
@@ -206,13 +206,10 @@ export default function CalendarContainer() {
             ))}
           </Grid> */}
           <Route to={'/dashboard'}>
-          <Button
-            className={classes.mainGrid}
-            variant="contained"
-            color="primary"
-          >
-            BACK TO DASHBOARD
-          </Button></Route>
+            <Button className={classes.mainGrid} variant='contained' color='primary'>
+              BACK TO DASHBOARD
+            </Button>
+          </Route>
         </main>
       </Container>
     </React.Fragment>

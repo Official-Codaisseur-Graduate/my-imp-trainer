@@ -35,7 +35,7 @@ const ExpansionPanelSummary = withStyles({
     borderBottom: '1px solid rgba(0, 0, 0, .125)',
     marginBottom: -1,
     minHeight: 56,
-    flexGrow: 0,
+    flexGrow: '0 !important',
     width: '290px',
     '&$expanded': {
       minHeight: 56
@@ -87,7 +87,7 @@ export default function WeekContainer() {
   const week = calendar.slice(0, 7);
   // console.log(week);
 
-  const [expanded, setExpanded] = React.useState('panel1');
+  const [expanded, setExpanded] = React.useState('panel');
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -121,11 +121,11 @@ export default function WeekContainer() {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                {/* <List className={classes.root}>
+                <List className={classes.root}>
                   {week.map((day) => (
-                    <Day key={day.id} day={day} />
+                    <Day key={day.id} calendar={calendar} day={day} workouts={workouts} />
                   ))}
-                </List> */}
+                </List>
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -136,11 +136,11 @@ export default function WeekContainer() {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                {/* <List className={classes.root}>
+                <List className={classes.root}>
                   {week.map((day) => (
-                    <Day key={day.id} day={day} />
+                    <Day key={day.id} calendar={calendar} day={day} workouts={workouts} />
                   ))}
-                </List> */}
+                </List>
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -151,11 +151,11 @@ export default function WeekContainer() {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                {/* <List className={classes.root}>
+                <List className={classes.root}>
                   {week.map((day) => (
-                    <Day key={day.id} day={day} />
+                    <Day key={day.id} calendar={calendar} day={day} workouts={workouts} />
                   ))}
-                </List> */}
+                </List>
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
