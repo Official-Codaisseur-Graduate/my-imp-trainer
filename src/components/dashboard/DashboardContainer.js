@@ -27,7 +27,7 @@ class DashboardContainer extends Component {
     return (
       <main>
         <div>
-          <img src={logo} style={{ width: "50vh" }} alt="logo" />
+          <img src={logo} style={{ width: "100%" }} alt="logo" />
         </div>
         <User userImage={this.state.user.imageUrl} userName={userName}></User>
         <ProgressBar percentage={userProgress} />
