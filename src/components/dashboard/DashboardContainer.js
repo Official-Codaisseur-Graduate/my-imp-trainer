@@ -8,19 +8,40 @@ import styles from "./styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import { profiles, users } from "../../data.js";
 import { Link } from "react-router-dom";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
 import happy from "../../images/happy.jpg";
 import { connect } from "react-redux";
+import request from "superagent";
 
 class DashboardContainer extends Component {
-  state = { user: users[0] };
+  // state = { user: users[0] };
+
+  componentDidMount() {
+    request
+      .get("https://radiant-ocean-32463.herokuapp.com/calendar")
+      .then(res => {
+        this.props.dispatch({
+          type: "CALENDAR",
+          payload: res.body
+        });
+      });
+    request
+      .get("https://radiant-ocean-32463.herokuapp.com/workout")
+      .then(res => {
+        this.props.dispatch({
+          type: "WORKOUT_LIST",
+          payload: res.body
+        });
+      });
+    // this.props.history.push("/dashboard");
+  }
 
   render() {
     const { classes } = this.props;
-    const user = this.state.user;
+    console.log('PROPS FROM DASHBOARD CONTAINER', this.props)
+    const user = this.props.user;
     const userName = `${user.firstName} ${user.lastName}`;
     const userDate =
       Math.ceil((Date.parse(user.startDate) - Date.now()) / 8.64e7) * -1;
@@ -49,7 +70,7 @@ class DashboardContainer extends Component {
         <div>
           <img src={logo} style={{ width: "100%" }} alt="logo" />
         </div>
-        <User userImage={this.state.user.imageUrl} userName={userName}></User>
+        <User userImage={user.imageUrl} userName={userName}></User>
         <ProgressBar percentage={userProgress} />
         <div className={classes.trackers}>
           <Tracker icon="kcal" number="340 kcal" />
@@ -83,7 +104,9 @@ class DashboardContainer extends Component {
 }
 const mapStateToProps = state => {
   return {
-    workouts: state.workouts
+    workouts: state.workouts,
+    calendar: state.calendar,
+    user: state.user
   };
 };
 
