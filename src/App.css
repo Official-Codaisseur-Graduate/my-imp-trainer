@@ -1,8 +1,18 @@
 .App {
   text-align: center;
-  background-color: #070707;
+  background-color: #070707 !important;
   color: white;
   height: 100vh;
+  margin: 20px;
+}
+
+body {
+  margin: 0;
+  background-color: #070707 !important;
+}
+
+main {
+  padding-bottom: 20px;
 }
 
 .App-link {
@@ -30,5 +40,4 @@ ul {
 
 .route-wrapper > div {
   position: flex;
-  
 }
