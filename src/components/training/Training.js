@@ -15,17 +15,20 @@ import { Done, ArrowRight, ArrowLeft } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import Trophy from "../trophy/Trophy";
 import { connect } from "react-redux";
-import { workouts } from "../../data";
 
-class Video extends React.Component {
+class Training extends React.Component {
   state = { trophy: false, achievement: "" };
 
-  finishWorkout = id => {
-    console.log("id to function", this.props.workouts);
-    this.props.dispatch({
-      type: "TODAY_WORKOUTS",
-      payload: id
-    });
+  componentDidMount() {
+    console.log("comp did mount");
+    if (this.props.match.params.trainingId)
+      this.props.dispatch({
+        type: "WORKOUT",
+        payload: this.props.match.params.trainingId
+      });
+  }
+
+  finishWorkout = () => {
     this.setState({
       trophy: true,
       achievement: "workout"
@@ -33,7 +36,7 @@ class Video extends React.Component {
   };
 
   render() {
-    console.log("id to function", this.props.workouts);
+    console.log("tis.props.workout", this.props.workout);
 
     const { classes } = this.props;
     if (this.state.trophy) {
@@ -52,34 +55,34 @@ class Video extends React.Component {
               variant="h5"
               color="primary"
             >
-              {workouts[this.props.workouts[0]].title}
+              {this.props.workout.title}
             </Typography>
             <video
               className={classes.video}
               controls
               autoPlay
-              src={workouts[this.props.workouts[0]].videoUrl}
+              src={this.props.workout.videoUrl}
             />
             <Typography className={classes.title} component="p">
-              {workouts[this.props.workouts[0]].description}
+              {this.props.workout.description}
             </Typography>
             <Grid container spacing={3}>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Kcal</p>
-                  <p>{workouts[this.props.workouts[0]].calories}</p>
+                  <p>{this.props.workout.calories}</p>
                 </Paper>
               </Grid>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Time</p>
-                  <p>{workouts[this.props.workouts[0]].totalTime * 0.0001}</p>
+                  <p>{this.props.workout.totalTime * 0.0001 || "ccc"}</p>
                 </Paper>
               </Grid>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Level</p>
-                  <p>{workouts[this.props.workouts[0]].difficulty}</p>
+                  <p>{this.props.workout.difficulty}</p>
                 </Paper>
               </Grid>
             </Grid>
@@ -114,9 +117,10 @@ class Video extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log("recieve state");
   return {
-    workouts: state.workouts
+    workout: state.workout
   };
 };
 
-export default withStyles(styles)(connect(mapStateToProps)(Video));
+export default withStyles(styles)(connect(mapStateToProps)(Training));
