@@ -10,15 +10,17 @@ import {
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import Container from "@material-ui/core/Container";
-import logo from "../../images/logo.png";
 import { Done, ArrowRight, ArrowLeft } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import Trophy from "../trophy/Trophy";
 import { connect } from "react-redux";
 import { workouts } from "../../data";
+import Workout from "./Workout";
 
 class Video extends React.Component {
-  state = { trophy: false, achievement: "" };
+  state = { trophy: false,
+     achievement: "",
+     start: false };
 
   finishWorkout = id => {
     console.log("id to function", this.props.workouts);
@@ -32,20 +34,38 @@ class Video extends React.Component {
     });
   };
 
+  startWorkout = () => {
+    
+    this.setState({
+      start: true
+    });
+  };
+
   render() {
     console.log("id to function", this.props.workouts);
 
     const { classes } = this.props;
     if (this.state.trophy) {
       return <Trophy achievement={this.state.achievement} />;
-    } else {
+    } if(!this.state.start){
+        return <Workout
+         startWorkout={this.startWorkout}
+         title={workouts[this.props.workouts[0]].title}
+         description={workouts[this.props.workouts[0]].description}
+         />
+    }
+    else {
       return (
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
-            <div className={classes.logo}>
-              <img src={logo} alt="IMP Trainer" />
-            </div>
+            <video
+              className={classes.video}
+              // controls
+              autoPlay
+              src={workouts[this.props.workouts[0]].videoUrl}
+            />
+            <Typography className={classes.title} component="p">
             <Typography
               className={classes.title}
               component="h1"
@@ -54,13 +74,6 @@ class Video extends React.Component {
             >
               {workouts[this.props.workouts[0]].title}
             </Typography>
-            <video
-              className={classes.video}
-              controls
-              autoPlay
-              src={workouts[this.props.workouts[0]].videoUrl}
-            />
-            <Typography className={classes.title} component="p">
               {workouts[this.props.workouts[0]].description}
             </Typography>
             <Grid container spacing={3}>
