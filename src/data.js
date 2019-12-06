@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 export const categories = [
   { id: 1, name: "Beginner", level: 1 },
   { id: 2, name: "Intermediate", level: 2 },
@@ -164,7 +167,7 @@ export const workouts = [
     calories: 120,
     totalTime: 600000,
     description:
-      "<p>In this exercise we are going to work on your flexibility.</p><ul><li>exercise 1<li/><li>exercise 2<li/><li>exercise 3<li/></ul>"
+     <div><p>In this exercise we are going to work on your flexibility.</p><ul><li>exercise 1</li><li>exercise 2</li><li>exercise 3</li></ul></div>
   },
   {
     id: 2,
@@ -175,7 +178,7 @@ export const workouts = [
     calories: 120,
     totalTime: 600000,
     description:
-      "<p>In this exercise we are going to work on your strenght.</p><ul><li>exercise 1<li/><li>exercise 2<li/><li>exercise 3<li/></ul>"
+      <div><p>In this exercise we are going to work on your strenght.</p><ul><li>exercise 1</li><li>exercise 2</li><li>exercise 3</li></ul></div>
   },
   {
     id: 3,
@@ -186,7 +189,7 @@ export const workouts = [
     calories: 120,
     totalTime: 600000,
     description:
-      "<p>In this exercise we are going to work on your durability.</p><ul><li>exercise 1<li/><li>exercise 2<li/><li>exercise 3<li/></ul>"
+      <div><p>In this exercise we are going to work on your durability.</p><ul><li>exercise 1</li><li>exercise 2</li><li>exercise 3</li></ul></div>
   },
   {
     id: 4,
@@ -197,7 +200,7 @@ export const workouts = [
     calories: 120,
     totalTime: 600000,
     description:
-      "<p>In this exercise we are going to work on your movibility.</p><ul><li>exercise 1<li/><li>exercise 2<li/><li>exercise 3<li/></ul>"
+      <div><p>In this exercise we are going to work on your movibility.</p><ul><li>exercise 1</li><li>exercise 2</li><li>exercise 3</li></ul></div>
   },
   {
     id: 5,
@@ -208,7 +211,8 @@ export const workouts = [
     calories: 120,
     totalTime: 600000,
     description:
-      "<p>In this exercise we are going to work on your core.</p><ul><li>exercise 1<li/><li>exercise 2<li/><li>exercise 3<li/></ul>"
+      <div><p>In this exercise we are going to work on your core.</p><ul><li>exercise 1</li><li>exercise 2</li><li>exercise 3</li></ul></div>
+
   }
 ];
 
