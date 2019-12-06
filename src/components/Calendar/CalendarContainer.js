@@ -18,7 +18,8 @@ import { Link as Route } from 'react-router-dom';
 const ExpansionPanel = withStyles({
   root: {
     border: '1px solid rgba(0, 0, 0, .125)',
-    margin: '0 auto',
+    borderRadius: 4,
+    margin: '10px auto',
     boxShadow: 'none',
     '&:not(:last-child)': {
       borderBottom: 0
@@ -48,7 +49,7 @@ const ExpansionPanelSummary = withStyles({
   },
   content: {
     '&$expanded': {
-      margin: '12px 0',
+      margin: '6px 0',
       flexGrow: 0
     }
   },

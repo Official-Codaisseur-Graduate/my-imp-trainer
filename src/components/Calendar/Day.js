@@ -6,6 +6,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 // import Link from 'react-router-dom';
 import { Link as Route } from 'react-router-dom';
+import { green } from '@material-ui/core/colors';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
 export default function Day(props) {
   // const { calendar } = props;
@@ -95,25 +97,28 @@ export default function Day(props) {
   const amp = firstWorkout() && secondWorkout() ? ` & ` : ``;
 
   return (
-    <ListItem>
-      <ListItemAvatar>
-        <Avatar>
-          <img src={images[day.id - 1].image} alt='' />
-          {/* style={{ width: '60px' }}  */}
-        </Avatar>
-      </ListItemAvatar>
-      {/* <ListItemText
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>
+            <img src={images[day.id - 1].image} alt='' />
+            {/* style={{ width: '60px' }}  */}
+          </Avatar>
+        </ListItemAvatar>
+        {/* <ListItemText
           primary={`Day ${day.day}, ${second}`}
           secondary={`${firstWorkout()} & ${secondWorkout()}`}
           // Workouts:
         /> */}
-      <Typography variant='p' color='inherit'>
-        {`Day ${day.day}, ${second}`}
-        <br></br>
-        <Route to={`/video/${day.id}`}>{`${firstWorkout()}`}</Route>
-        {amp}
-        <Route to={`/video/${day.id}`}>{`${secondWorkout()}`}</Route>
-      </Typography>
-    </ListItem>
+        <Typography variant='p' color='inherit'>
+          {`Day ${day.day}, ${second}`}
+          <br></br>
+          <Route to={`/video/${day.workouts[0]}`}>{`${firstWorkout()}`}</Route>
+          {amp}
+          <Route to={`/video/${day.workouts[1]}`}>{`${secondWorkout()}`}</Route>
+        </Typography>
+      </ListItem>
+      <CheckBoxIcon style={{ color: green[500] }} />
+    </div>
   );
 }
