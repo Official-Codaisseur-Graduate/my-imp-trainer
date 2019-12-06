@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   CssBaseline,
   Paper,
   Grid,
@@ -10,90 +9,83 @@ import {
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import Container from "@material-ui/core/Container";
-import { Done, ArrowRight, ArrowLeft } from "@material-ui/icons";
+import logo from "../../images/logo.png";
+import { ArrowRight, ArrowLeft } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import Trophy from "../trophy/Trophy";
 import { connect } from "react-redux";
-import { workouts } from "../../data";
-import Workout from "./Workout";
 
-class Video extends React.Component {
-  state = { trophy: false,
-     achievement: "",
-     start: false };
+class Training extends React.Component {
+  state = { trophy: false, achievement: "" };
 
-  finishWorkout = id => {
-    this.props.dispatch({
-      type: "TODAY_WORKOUTS",
-      payload: id
-    });
+  componentDidMount() {
+    console.log("comp did mount");
+    if (this.props.match.params.trainingId)
+      this.props.dispatch({
+        type: "WORKOUT",
+        payload: this.props.match.params.trainingId
+      });
+  }
+
+  finishWorkout = () => {
     this.setState({
       trophy: true,
       achievement: "workout"
     });
   };
 
-  startWorkout = () => {
-    
-    this.setState({
-      start: true
-    });
-  };
-
   render() {
+    console.log("tis.props.workout", this.props.workout);
+
     const { classes } = this.props;
     if (this.state.trophy) {
       return <Trophy achievement={this.state.achievement} />;
-    } if(!this.state.start){
-        return <Workout
-         startWorkout={this.startWorkout}
-         title={workouts[this.props.workouts[0]].title}
-         description={workouts[this.props.workouts[0]].description}
-         />
-    }
-    else {
+    } else {
       return (
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
-            <video
-              className={classes.video}
-              // controls
-              autoPlay
-              src={workouts[this.props.workouts[0]].videoUrl}
-            />
-            <Typography className={classes.title} component="div">
+            <div className={classes.logo}>
+              <img src={logo} alt="IMP Trainer" />
+            </div>
             <Typography
               className={classes.title}
               component="h1"
               variant="h5"
               color="primary"
             >
-              {workouts[this.props.workouts[0]].title}
+              {this.props.workout.title}
             </Typography>
-              {workouts[this.props.workouts[0]].description}
+            <video
+              className={classes.video}
+              controls
+              autoPlay
+              src={this.props.workout.videoUrl}
+            />
+            <Typography className={classes.title} component="div">
+              {this.props.workout.description}
             </Typography>
             <Grid container spacing={3}>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Kcal</p>
-                  <p>{workouts[this.props.workouts[0]].calories}</p>
+                  <p>{this.props.workout.calories}</p>
                 </Paper>
               </Grid>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Time</p>
-                  <p>{workouts[this.props.workouts[0]].totalTime * 0.0001}</p>
+                  <p>{this.props.workout.totalTime * 0.0001}</p>
                 </Paper>
               </Grid>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Level</p>
-                  <p>{workouts[this.props.workouts[0]].difficulty}</p>
+                  <p>{this.props.workout.difficulty}</p>
                 </Paper>
               </Grid>
             </Grid>
-            <Button
+            {/* <Button
               onClick={() => this.finishWorkout(this.props.workouts[0])}
               fullWidth
               variant="contained"
@@ -102,7 +94,10 @@ class Video extends React.Component {
             >
               <Done />
               Done!
-            </Button>
+            </Button> */}
+            <Grid style={{height:'20px', width:"100%"}}>
+
+            </Grid>
             <Grid container>
               <Grid item xs>
                 <Link to="/dashboard" variant="body2">
@@ -124,9 +119,10 @@ class Video extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log("recieve state");
   return {
-    workouts: state.workouts
+    workout: state.workout
   };
 };
 
-export default withStyles(styles)(connect(mapStateToProps)(Video));
+export default withStyles(styles)(connect(mapStateToProps)(Training));
