@@ -39,7 +39,7 @@ const ExpansionPanelSummary = withStyles({
     marginBottom: -1,
     minHeight: 56,
     flexGrow: '0 !important',
-    width: '260px',
+    width: '100%',
 
     // // Small devices (landscape phones, 576px and up)
     // @media (min-width: 576px) { ... }
