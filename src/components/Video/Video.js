@@ -23,7 +23,6 @@ class Video extends React.Component {
      start: false };
 
   finishWorkout = id => {
-    console.log("id to function", this.props.workouts);
     this.props.dispatch({
       type: "TODAY_WORKOUTS",
       payload: id
@@ -42,8 +41,6 @@ class Video extends React.Component {
   };
 
   render() {
-    console.log("id to function", this.props.workouts);
-
     const { classes } = this.props;
     if (this.state.trophy) {
       return <Trophy achievement={this.state.achievement} />;

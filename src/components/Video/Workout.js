@@ -72,8 +72,8 @@ export default function Workout(props) {
   const classes = useStyles();
   const { startWorkout, title, description } = props;
   const background = `url(https://source.unsplash.com/featured/?{crossfit},${title})`
-  const style = {backgroundImage: background, size: '700px',
-    height: '290px',
+  const style = {backgroundImage: background, size: '800px',
+    height: '320px',
     backgroundSize: '100%',
     backgroundRepeat: 'no-repeat',
   display: 'flex',

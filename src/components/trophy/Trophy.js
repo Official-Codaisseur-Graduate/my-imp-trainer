@@ -36,9 +36,10 @@ const useStyles = makeStyles({
   },
   cardMedia: {
     margin: "15vh auto 5vh",
-    height: "30vh",
+    height: "25vh",
     backgroundColor: "#070707",
-    color: "white"
+    color: "white",
+    width:'19vh'
   },
   content: {
     backgroundColor: "#070707",
