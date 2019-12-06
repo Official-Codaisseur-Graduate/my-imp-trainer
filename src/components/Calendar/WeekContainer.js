@@ -14,7 +14,9 @@ import { workouts } from '../../data';
 
 const ExpansionPanel = withStyles({
   root: {
-    border: '1px solid rgba(0, 0, 0, .125)',
+    // border: '1px solid rgba(0, 0, 0, .125)',
+    borderRadius: 4,
+    margin: '10px auto',
     boxShadow: 'none',
     '&:not(:last-child)': {
       borderBottom: 0
@@ -32,11 +34,25 @@ const ExpansionPanel = withStyles({
 const ExpansionPanelSummary = withStyles({
   root: {
     backgroundColor: 'rgba(0, 0, 0, .03)',
+    // backgroundColor: '#070707',
     borderBottom: '1px solid rgba(0, 0, 0, .125)',
     marginBottom: -1,
     minHeight: 56,
     flexGrow: '0 !important',
-    width: '290px',
+    width: '100%',
+
+    // // Small devices (landscape phones, 576px and up)
+    // @media (min-width: 576px) { ... }
+
+    // // Medium devices (tablets, 768px and up)
+    // @media (min-width: 768px) { ... }
+
+    // // Large devices (desktops, 992px and up)
+    // @media (min-width: 992px) { ... }
+
+    // // Extra large devices (large desktops, 1200px and up)
+    // @media (min-width: 1200px) { ... }
+
     '&$expanded': {
       minHeight: 56
     }
@@ -53,7 +69,8 @@ const ExpansionPanelSummary = withStyles({
 
 const ExpansionPanelDetails = withStyles((theme) => ({
   root: {
-    padding: theme.spacing(2)
+    // padding: theme.spacing(2)
+    padding: '6px 16px 0px 16px'
   }
 }))(MuiExpansionPanelDetails);
 
@@ -61,7 +78,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     maxWidth: 360,
-    backgroundColor: theme.palette.background.paper
+    // backgroundColor: theme.palette.background.paper
+    backgroundColor: '#070707'
   },
   mainGrid: {
     marginTop: theme.spacing(3)

@@ -95,14 +95,25 @@ export default function Day(props) {
     }
   };
 
+  const workoutComplete = true;
+
   const amp = firstWorkout() && secondWorkout() ? ` & ` : ``;
 
+  const complete = workoutComplete ? (
+    <CheckBoxIcon style={{ color: green[500], marginRight: "4px" }} />
+  ) : null;
+
   return (
+    // <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
     <div
       style={{
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "center"
+        alignItems: "center",
+        margin: "10px auto",
+        backgroundColor: "white",
+        borderRadius: "4px",
+        color: "black"
       }}
     >
       <ListItem>
@@ -129,7 +140,8 @@ export default function Day(props) {
           >{`${secondWorkout()}`}</Route>
         </Typography>
       </ListItem>
-      <CheckBoxIcon style={{ color: green[500] }} />
+      {complete}
+      {/* <CheckBoxIcon style={{ color: green[500] }} /> */}
     </div>
   );
 }
