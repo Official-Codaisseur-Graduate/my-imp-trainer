@@ -1,13 +1,13 @@
-import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import ListItem from '@material-ui/core/ListItem';
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import ListItem from "@material-ui/core/ListItem";
 // import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Avatar from "@material-ui/core/Avatar";
 // import Link from 'react-router-dom';
-import { Link as Route } from 'react-router-dom';
-import { green } from '@material-ui/core/colors';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import { Link as Route } from "react-router-dom";
+import { green } from "@material-ui/core/colors";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
 
 export default function Day(props) {
   // const { calendar } = props;
@@ -19,29 +19,30 @@ export default function Day(props) {
 
   const images = [
     {
-      image: 'https://source.unsplash.com/featured/?{weightlifting}'
+      image: "https://source.unsplash.com/featured/?{weightlifting}"
     },
     {
-      image: 'https://source.unsplash.com/featured/?{gym}'
+      image: "https://source.unsplash.com/featured/?{gym}"
     },
     {
-      image: 'https://source.unsplash.com/featured/?{crossfit}'
+      image: "https://source.unsplash.com/featured/?{crossfit}"
     },
     {
-      image: 'https://source.unsplash.com/featured/?{fitness}'
+      image: "https://source.unsplash.com/featured/?{fitness}"
     },
     {
-      image: 'https://source.unsplash.com/featured/?{barbells}'
+      image: "https://source.unsplash.com/featured/?{barbells}"
     },
     {
-      image: 'https://source.unsplash.com/featured/?{bodybuilding}'
+      image: "https://source.unsplash.com/featured/?{bodybuilding}"
     },
     {
-      image: 'https://source.unsplash.com/featured/?{trainer}'
+      image: "https://source.unsplash.com/featured/?{trainer}"
     }
   ];
 
-  const second = day.workouts.length !== 0 ? `${day.workouts.length} workouts:` : `Rest day`;
+  const second =
+    day.workouts.length !== 0 ? `${day.workouts.length} workouts:` : `Rest day`;
 
   const workoutOne = day.workouts[0];
   const workoutTwo = day.workouts[1];
@@ -58,7 +59,7 @@ export default function Day(props) {
   //   return object.id;
   // });
 
-  const mappedTitle = workouts.map((object) => {
+  const mappedTitle = workouts.map(object => {
     return object.title;
   });
 
@@ -74,7 +75,7 @@ export default function Day(props) {
     } else if (workoutOne === 5) {
       return mappedTitle[4];
     } else {
-      return '';
+      return "";
     }
   };
 
@@ -90,7 +91,7 @@ export default function Day(props) {
     } else if (workoutTwo === 5) {
       return mappedTitle[4];
     } else {
-      return '';
+      return "";
     }
   };
 
@@ -99,26 +100,26 @@ export default function Day(props) {
   const amp = firstWorkout() && secondWorkout() ? ` & ` : ``;
 
   const complete = workoutComplete ? (
-    <CheckBoxIcon style={{ color: green[500], marginRight: '4px' }} />
+    <CheckBoxIcon style={{ color: green[500], marginRight: "4px" }} />
   ) : null;
 
   return (
     // <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        margin: '10px auto',
-        backgroundColor: 'white',
-        borderRadius: '4px',
-        color: 'black'
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        margin: "10px auto",
+        backgroundColor: "white",
+        borderRadius: "4px",
+        color: "black"
       }}
     >
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-            <img src={images[day.id - 1].image} alt='' />
+            <img src={images[day.id - 1].image} alt="" />
             {/* style={{ width: '60px' }}  */}
           </Avatar>
         </ListItemAvatar>
@@ -127,12 +128,16 @@ export default function Day(props) {
           secondary={`${firstWorkout()} & ${secondWorkout()}`}
           // Workouts:
         /> */}
-        <Typography variant='p' color='inherit'>
+        <Typography variant="p" color="inherit">
           {`Day ${day.day}, ${second}`}
           <br></br>
-          <Route to={`/video/${day.workouts[0]}`}>{`${firstWorkout()}`}</Route>
+          <Route
+            to={`/training/${day.workouts[0]}`}
+          >{`${firstWorkout()}`}</Route>
           {amp}
-          <Route to={`/video/${day.workouts[1]}`}>{`${secondWorkout()}`}</Route>
+          <Route
+            to={`/training/${day.workouts[1]}`}
+          >{`${secondWorkout()}`}</Route>
         </Typography>
       </ListItem>
       {complete}
