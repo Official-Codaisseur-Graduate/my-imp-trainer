@@ -17,7 +17,7 @@ import { Link as Route } from 'react-router-dom';
 
 const ExpansionPanel = withStyles({
   root: {
-    border: '1px solid rgba(0, 0, 0, .125)',
+    // border: '1px solid rgba(0, 0, 0, .125)',
     borderRadius: 4,
     margin: '10px auto',
     boxShadow: 'none',
@@ -58,7 +58,8 @@ const ExpansionPanelSummary = withStyles({
 
 const ExpansionPanelDetails = withStyles((theme) => ({
   root: {
-    padding: theme.spacing(2)
+    // padding: theme.spacing(2)
+    padding: '22px 0px 0px 0px'
   }
 }))(MuiExpansionPanelDetails);
 
@@ -145,10 +146,10 @@ export default function CalendarContainer() {
                 <Typography variant='subtitle1' color='textSecondary'>
                   {amountOfWorkouts} workouts
                 </Typography>
-                <Typography variant='subtitle1' paragraph></Typography>
+                {/* <Typography variant='subtitle1' paragraph></Typography>
                 <Typography variant='subtitle1' color='primary'>
                   Explore your schedule.
-                </Typography>
+                </Typography> */}
               </CardContent>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
@@ -167,10 +168,10 @@ export default function CalendarContainer() {
                 <Typography variant='subtitle1' color='textSecondary'>
                   {amountOfWorkouts} workouts
                 </Typography>
-                <Typography variant='subtitle1' paragraph></Typography>
+                {/* <Typography variant='subtitle1' paragraph></Typography>
                 <Typography variant='subtitle1' color='primary'>
                   Explore your schedule.
-                </Typography>
+                </Typography> */}
               </CardContent>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
@@ -189,10 +190,10 @@ export default function CalendarContainer() {
                 <Typography variant='subtitle1' color='textSecondary'>
                   {amountOfWorkouts} workouts
                 </Typography>
-                <Typography variant='subtitle1' paragraph></Typography>
+                {/* <Typography variant='subtitle1' paragraph></Typography>
                 <Typography variant='subtitle1' color='primary'>
                   Explore your schedule.
-                </Typography>
+                </Typography> */}
               </CardContent>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>

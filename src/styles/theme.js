@@ -1,6 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { lighten } from 'material-ui/utils/colorManipulator';
-import { width } from '@material-ui/system';
 
 export const theme = createMuiTheme({
   type: 'dark',
@@ -107,6 +106,12 @@ export const theme = createMuiTheme({
         }
       }
     },
+    MuiList: {
+      padding: {
+        paddingTop: 0,
+        paddingBottom: 0
+      }
+    },
     MuiGrid: {
       root: {
         justifyContent: 'space-around'
@@ -123,7 +128,8 @@ export const theme = createMuiTheme({
     MuiExpansionPanelDetails: {
       root: {
         // '& > .MuiExpansionPanelDetails-content': {
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        backgroundColor: '#070707'
       }
     }
   }
