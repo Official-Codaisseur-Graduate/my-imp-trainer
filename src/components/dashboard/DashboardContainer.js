@@ -8,7 +8,7 @@ import styles from "./styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import { profiles, users } from "../../data.js";
+import { users } from "../../data.js";
 import { Link } from "react-router-dom";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";

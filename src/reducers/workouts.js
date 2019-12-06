@@ -1,7 +1,5 @@
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case "ALL":
-      return state;
     case "TODAY_WORKOUTS":
       return state.filter(workoutId => workoutId !== action.payload);
     default:
