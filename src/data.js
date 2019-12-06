@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const categories = [
   { id: 1, name: "Beginner", level: 1 },
   { id: 2, name: "Intermediate", level: 2 },
@@ -166,7 +164,7 @@ export const workouts = [
     calories: 120,
     totalTime: 600000,
     description:
-      <div><p>In this exercise we are going to work on your flexibility.</p><ul><li>exercise 1</li><li>exercise 2</li><li>exercise 3</li></ul></div>
+      "<p>In this exercise we are going to work on your flexibility.</p><ul><li>exercise 1<li/><li>exercise 2<li/><li>exercise 3<li/></ul>"
   },
   {
     id: 2,
@@ -177,7 +175,7 @@ export const workouts = [
     calories: 120,
     totalTime: 600000,
     description:
-      <div><p>In this exercise we are going to work on your strenght.</p><ul><li>exercise 1</li><li>exercise 2</li><li>exercise 3</li></ul></div>
+      "<p>In this exercise we are going to work on your strenght.</p><ul><li>exercise 1<li/><li>exercise 2<li/><li>exercise 3<li/></ul>"
   },
   {
     id: 3,
@@ -188,7 +186,7 @@ export const workouts = [
     calories: 120,
     totalTime: 600000,
     description:
-      <div><p>In this exercise we are going to work on your durability.</p><ul><li>exercise 1</li><li>exercise 2</li><li>exercise 3</li></ul></div>
+      "<p>In this exercise we are going to work on your durability.</p><ul><li>exercise 1<li/><li>exercise 2<li/><li>exercise 3<li/></ul>"
   },
   {
     id: 4,
@@ -198,7 +196,8 @@ export const workouts = [
     difficulty: 1,
     calories: 120,
     totalTime: 600000,
-    description:<div><p>In this exercise we are going to work on your movibility.</p><ul><li>exercise 1</li><li>exercise 2</li><li>exercise 3</li></ul></div>
+    description:
+      "<p>In this exercise we are going to work on your movibility.</p><ul><li>exercise 1<li/><li>exercise 2<li/><li>exercise 3<li/></ul>"
   },
   {
     id: 5,
@@ -209,7 +208,7 @@ export const workouts = [
     calories: 120,
     totalTime: 600000,
     description:
-      <div><p>In this exercise we are going to work on your core.</p><ul><li>exercise 1</li><li>exercise 2</li><li>exercise 3</li></ul></div>
+      "<p>In this exercise we are going to work on your core.</p><ul><li>exercise 1<li/><li>exercise 2<li/><li>exercise 3<li/></ul>"
   }
 ];
 
@@ -219,13 +218,8 @@ export const users = [
     firstName: "Jon",
     lastName: "Snow",
     emailAddress: "winteriscoming@got.com",
-    password: "12345678"
-  }
-];
-
-export const profiles = [
-  {
-    userId: 1,
+    password: "12345678",
+    startDate: "2019-11-06",
     categoryIds: [1, 2],
     imageUrl:
       "https://img.buzzfeed.com/buzzfeed-static/static/2019-01/4/12/asset/buzzfeed-prod-web-06/sub-buzz-4788-1546623252-1.jpg"

@@ -15,20 +15,21 @@ import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import happy from '../../images/happy.jpg';
 
 class DashboardContainer extends Component {
-  state = { profile: profiles[0], users: users };
+  state = { user: users[0] };
 
   render() {
     const { classes } = this.props;
-    console.log('STATE', this.state);
-    const user = this.state.users.find((user) => user.id === this.state.profile.userId);
+    const user = this.state.user;
     const userName = `${user.firstName} ${user.lastName}`;
+    const userDate = Math.ceil((Date.parse(user.startDate) - Date.now()) / 8.64e7) * -1;
+    const userProgress = Math.floor((userDate * 100) / 90);
     return (
-      <div>
+      <main>
         <div>
-          <img src={logo} style={{ width: '50vh' }} alt='logo' />
+          <img src={logo} style={{ width: '100%' }} alt='logo' />
         </div>
-        <User userImage={this.state.profile.imageUrl} userName={userName}></User>
-        <ProgressBar percentage={33} />
+        <User userImage={this.state.user.imageUrl} userName={userName}></User>
+        <ProgressBar percentage={userProgress} />
         <div className={classes.trackers}>
           <Tracker icon='kcal' number='340 kcal' />
           <Tracker icon='time' number='3.5 hours' />
@@ -36,14 +37,10 @@ class DashboardContainer extends Component {
         </div>
         <div className={classes.lowerDashboard}>
           <Paper className={classes.streak}>
-            <Typography
-              variant='h6'
-              color='primary'
-              style={{ marginTop: '2vh', lineHeight: '6vh' }}
-            >
+            <Typography variant='h6' color='primary' className={classes.streakTitle}>
               You are on a 4 day streak !
             </Typography>
-            <img src={happy} className={classes.streakImg} alt='happy' />
+            <img src={happy} className={classes.streakImg} alt='streak' />
           </Paper>
           <div className={classes.linkBtns}>
             <Link to={`calendar`}>
@@ -60,7 +57,7 @@ class DashboardContainer extends Component {
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 }
