@@ -25,7 +25,7 @@ class DashboardContainer extends Component {
       Math.ceil((Date.parse(user.startDate) - Date.now()) / 8.64e7) * -1;
     const userProgress = Math.floor((userDate * 100) / 90);
     return (
-      <div>
+      <main>
         <div>
           <img src={logo} style={{ width: "50vh" }} alt="logo" />
         </div>
@@ -62,7 +62,7 @@ class DashboardContainer extends Component {
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 }
