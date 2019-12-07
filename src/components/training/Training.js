@@ -103,7 +103,7 @@ class Training extends React.Component {
             <Grid container>
               <Grid item xs>
                 <Link to="/dashboard" variant="body2">
-                  <ArrowLeft className={classes.arrow} /> My profile
+                  <ArrowLeft className={classes.arrow} /> Dashboard
                 </Link>
               </Grid>
               <Grid item xs>

@@ -18,12 +18,12 @@ import request from "superagent";
 class DashboardContainer extends Component {
   // state = { user: users[0] };
 
-  async componentDidMount () {
+  async componentDidMount() {
     const user = await request
       .get("https://radiant-ocean-32463.herokuapp.com/user/1")
       .then(res => res.body);
-    const userDate = Math.ceil((Date.parse(user.startDate) - Date.now()) / 8.64e7) * -1;
-    console.log('USER DATE FROM CDM', userDate, user);
+    const userDate =
+      Math.ceil((Date.parse(user.startDate) - Date.now()) / 8.64e7) * -1;
     request
       .get("https://radiant-ocean-32463.herokuapp.com/calendar")
       .then(res => {
@@ -31,30 +31,29 @@ class DashboardContainer extends Component {
           type: "CALENDAR",
           payload: res.body
         });
-      });
-    request
-      .get("https://radiant-ocean-32463.herokuapp.com/calendar")
-      .then(res => {
-        //How to dispatch the correct workouts of the day ? can't grab user
         this.props.dispatch({
           type: "TODAY_WORKOUTS",
-          payload: {calendar: res.body, userDate: userDate}
-        })
+          payload: { calendar: res.body, userDate: userDate }
+        });
       });
-    
-    // this.props.history.push("/dashboard");
+    request
+      .get("https://radiant-ocean-32463.herokuapp.com/workout")
+      .then(res => {
+        this.props.dispatch({
+          type: "WORKOUT_LIST",
+          payload: res.body
+        });
+      });
   }
 
   render() {
     const { classes } = this.props;
-    console.log('PROPS FROM DASHBOARD CONTAINER', this.props)
     const user = this.props.user;
     const userName = `${user.firstName} ${user.lastName}`;
     const userDate =
       Math.ceil((Date.parse(user.startDate) - Date.now()) / 8.64e7) * -1;
     //Calculating progress for a 90 day program
     const userProgress = Math.floor((userDate * 100) / 90);
-    console.log('userDate and progress', userDate, userProgress)
     const workout = () => {
       if (this.props.workouts.length) {
         return (
