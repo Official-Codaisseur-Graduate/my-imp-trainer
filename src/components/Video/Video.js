@@ -34,7 +34,6 @@ class Video extends React.Component {
   };
 
   startWorkout = () => {
-    
     this.setState({
       start: true
     });
@@ -125,7 +124,7 @@ class Video extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    workouts: state.workouts
+    workouts: state.todaysWorkouts
   };
 };
 

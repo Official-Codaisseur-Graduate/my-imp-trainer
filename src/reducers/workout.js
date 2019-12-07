@@ -1,4 +1,4 @@
-import { workouts } from "../data.js";
+// import { workouts } from "../data.js";
 
 const reducer = (state = [], action = {}) => {
   switch (action.type) {

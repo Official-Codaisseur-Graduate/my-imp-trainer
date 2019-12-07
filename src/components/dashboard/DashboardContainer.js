@@ -18,7 +18,12 @@ import request from "superagent";
 class DashboardContainer extends Component {
   // state = { user: users[0] };
 
-  componentDidMount() {
+  async componentDidMount () {
+    const user = await request
+      .get("https://radiant-ocean-32463.herokuapp.com/user/1")
+      .then(res => res.body);
+    const userDate = Math.ceil((Date.parse(user.startDate) - Date.now()) / 8.64e7) * -1;
+    console.log('USER DATE FROM CDM', userDate, user);
     request
       .get("https://radiant-ocean-32463.herokuapp.com/calendar")
       .then(res => {
@@ -28,13 +33,15 @@ class DashboardContainer extends Component {
         });
       });
     request
-      .get("https://radiant-ocean-32463.herokuapp.com/workout")
+      .get("https://radiant-ocean-32463.herokuapp.com/calendar")
       .then(res => {
+        //How to dispatch the correct workouts of the day ? can't grab user
         this.props.dispatch({
-          type: "WORKOUT_LIST",
-          payload: res.body
-        });
+          type: "TODAY_WORKOUTS",
+          payload: {calendar: res.body, userDate: userDate}
+        })
       });
+    
     // this.props.history.push("/dashboard");
   }
 
@@ -45,7 +52,9 @@ class DashboardContainer extends Component {
     const userName = `${user.firstName} ${user.lastName}`;
     const userDate =
       Math.ceil((Date.parse(user.startDate) - Date.now()) / 8.64e7) * -1;
+    //Calculating progress for a 90 day program
     const userProgress = Math.floor((userDate * 100) / 90);
+    console.log('userDate and progress', userDate, userProgress)
     const workout = () => {
       if (this.props.workouts.length) {
         return (
@@ -104,7 +113,7 @@ class DashboardContainer extends Component {
 }
 const mapStateToProps = state => {
   return {
-    workouts: state.workouts,
+    workouts: state.todaysWorkouts,
     calendar: state.calendar,
     user: state.user
   };
