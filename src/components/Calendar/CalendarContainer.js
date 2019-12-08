@@ -12,7 +12,6 @@ import MainFeaturedPost from './MainFeaturedPost';
 import WeekContainer from './WeekContainer';
 import { CardContent } from '@material-ui/core';
 import logo from '../../images/logo.png';
-//replace calendar below
 //import { calendar } from '../../data';
 import { Link as Route } from 'react-router-dom';
 import { connect } from "react-redux";

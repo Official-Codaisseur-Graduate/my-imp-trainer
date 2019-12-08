@@ -61,7 +61,7 @@ class Video extends React.Component {
               autoPlay
               src={workoutList[todaysWorkouts[0]].videoUrl}
             />
-            <Typography className={classes.title} component="p">
+            {/* <Typography className={classes.title} component="p">
             <Typography
               className={classes.title}
               component="h1"
@@ -71,29 +71,29 @@ class Video extends React.Component {
               {workouts[this.props.workouts[0]].title}
             </Typography>
               {workouts[this.props.workouts[0]].description}
-            </Typography>
+            </Typography> */}
             <Grid container spacing={3}>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Kcal</p>
-                  <p>{workouts[this.props.workouts[0]].calories}</p>
+                  <p>{workoutList[todaysWorkouts[0]].calories}</p>
                 </Paper>
               </Grid>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Time</p>
-                  <p>{workouts[this.props.workouts[0]].totalTime * 0.0001}</p>
+                  <p>{workoutList[todaysWorkouts[0]].totalTime * 0.0001}</p>
                 </Paper>
               </Grid>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Level</p>
-                  <p>{workouts[this.props.workouts[0]].difficulty}</p>
+                  <p>{workoutList[todaysWorkouts[0]].difficulty}</p>
                 </Paper>
               </Grid>
             </Grid>
             <Button
-              onClick={() => this.finishWorkout(this.props.workouts[0])}
+              onClick={() => this.finishWorkout(todaysWorkouts[0])}
               fullWidth
               variant="contained"
               color="primary"
