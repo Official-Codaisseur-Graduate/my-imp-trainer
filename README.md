@@ -14,4 +14,4 @@ You will also see any lint errors in the console.
 
 ### CHANGELOG.md
 
-- Now you can find it there [CHANGELOG](https://github.com/Official-Codaisseur-Graduate/my-imp-trainer/blob/development/CHANGELOG.md), don't forget to update!
+- Now you can find it [there](https://github.com/Official-Codaisseur-Graduate/my-imp-trainer/blob/development/CHANGELOG.md), don't forget to update!
