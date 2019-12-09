@@ -12,6 +12,7 @@ import styles from "./styles";
 import logo from "../../images/logo.png";
 import request from "superagent";
 import { connect } from "react-redux";
+import { url } from "../../constants";
 
 class Login extends Component {
   handleChange = event => {
@@ -26,7 +27,7 @@ class Login extends Component {
     //Dev mode, always fetching first user in DB for now
     event.preventDefault();
     request
-      .get("https://radiant-ocean-32463.herokuapp.com/user/1")
+      .get(`${url}/user/1`)
       .then(res => {
         this.props.dispatch({
           type: "USER",

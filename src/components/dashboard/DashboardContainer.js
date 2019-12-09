@@ -14,18 +14,17 @@ import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
 import happy from "../../images/happy.jpg";
 import { connect } from "react-redux";
 import request from "superagent";
+import { url } from "../../constants";
 
 class DashboardContainer extends Component {
-  
-
   async componentDidMount() {
     const user = await request
-      .get("https://radiant-ocean-32463.herokuapp.com/user/1")
+      .get(`${url}/user/1`)
       .then(res => res.body);
     const userDate =
       Math.ceil((Date.parse(user.startDate) - Date.now()) / 8.64e7) * -1;
     request
-      .get("https://radiant-ocean-32463.herokuapp.com/calendar")
+      .get(`${url}/calendar`)
       .then(res => {
         this.props.dispatch({
           type: "CALENDAR",
@@ -37,7 +36,7 @@ class DashboardContainer extends Component {
         });
       });
     request
-      .get("https://radiant-ocean-32463.herokuapp.com/workout")
+      .get(`${url}/workout`)
       .then(res => {
         this.props.dispatch({
           type: "WORKOUT_LIST",
@@ -78,7 +77,7 @@ class DashboardContainer extends Component {
         <div>
           <img src={logo} style={{ width: "100%" }} alt="logo" />
         </div>
-        <User userImage={user.imageUrl} userName={userName}></User>
+        <User userImage={user.picture} userName={userName}></User>
         <ProgressBar percentage={userProgress} />
         <div className={classes.trackers}>
           <Tracker icon="kcal" number="340 kcal" />
