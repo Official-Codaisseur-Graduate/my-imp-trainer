@@ -1,10 +1,7 @@
 import React from "react";
 import {
   Button,
-  CssBaseline,
-  Paper,
   Grid,
-  Box,
   Typography, Container
 } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
@@ -103,7 +100,7 @@ export default function Workout(props) {
             >
               {title} workout 
             </Typography>
-            <Typography>
+            <Typography component="div">
               {description}
             </Typography>
             </div>

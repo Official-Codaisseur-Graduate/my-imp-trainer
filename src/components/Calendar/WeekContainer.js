@@ -131,7 +131,7 @@ const WeekContainer = props => {
               <Typography>Week 1</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <Typography>
+              <Typography component="div">
                 {/* <Grid container spacing={2}> */}
                 <List className={classes.root}>
                   {week.map(day => (

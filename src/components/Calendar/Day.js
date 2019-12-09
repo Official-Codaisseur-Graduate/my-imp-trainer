@@ -120,7 +120,6 @@ export default function Day(props) {
         <ListItemAvatar>
           <Avatar>
             {/* <img src={images[day.id - 1].image} alt="" /> */}
-            {/* <img src={images[day.day - 1].image} alt="" /> */}
             {/* style={{ width: '60px' }}  */}
           </Avatar>
         </ListItemAvatar>
@@ -129,7 +128,7 @@ export default function Day(props) {
           secondary={`${firstWorkout()} & ${secondWorkout()}`}
           // Workouts:
         /> */}
-        <Typography variant="p" color="inherit">
+        <Typography variant="div" color="inherit">
           {`Day ${day.day}, ${second}`}
           <br></br>
           <Route

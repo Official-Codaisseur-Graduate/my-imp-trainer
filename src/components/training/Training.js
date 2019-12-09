@@ -11,7 +11,7 @@ import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import Container from "@material-ui/core/Container";
 import logo from "../../images/logo.png";
-import { Done, ArrowRight, ArrowLeft } from "@material-ui/icons";
+import { ArrowRight, ArrowLeft } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import Trophy from "../trophy/Trophy";
 import { connect } from "react-redux";
@@ -76,7 +76,7 @@ class Training extends React.Component {
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Time</p>
-                  <p>{this.props.workout.totalTime * 0.0001 || "ccc"}</p>
+                  <p>{this.props.workout.totalTime * 0.0001}</p>
                 </Paper>
               </Grid>
               <Grid item xs={4}>
@@ -86,7 +86,7 @@ class Training extends React.Component {
                 </Paper>
               </Grid>
             </Grid>
-            <Button
+            {/* <Button
               onClick={() => this.finishWorkout()}
               fullWidth
               variant="contained"
@@ -95,7 +95,9 @@ class Training extends React.Component {
             >
               <Done />
               Done!
-            </Button>
+            </Button>{" "}
+             */}
+            <Grid style={{ height: "20px", width: "100%" }}></Grid>
             <Grid container>
               <Grid item xs>
                 <Link to="/dashboard" variant="body2">

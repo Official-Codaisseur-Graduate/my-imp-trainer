@@ -18,9 +18,7 @@ import { workouts } from "../../data";
 import Workout from "./Workout";
 
 class Video extends React.Component {
-  state = { trophy: false,
-     achievement: "",
-     start: false };
+  state = { trophy: false, achievement: "", start: false };
 
   finishWorkout = id => {
     this.props.dispatch({
@@ -43,14 +41,16 @@ class Video extends React.Component {
     const { classes, todaysWorkouts, workoutList } = this.props;
     if (this.state.trophy) {
       return <Trophy achievement={this.state.achievement} />;
-    } if(!this.state.start){
-        return <Workout
-         startWorkout={this.startWorkout}
-         title={workoutList[todaysWorkouts[0]].title}
-         description={workoutList[todaysWorkouts[0]].description}
-         />
     }
-    else {
+    if (!this.state.start) {
+      return (
+        <Workout
+          startWorkout={this.startWorkout}
+          title={workoutList[todaysWorkouts[0]].title}
+          description={workoutList[todaysWorkouts[0]].description}
+        />
+      );
+    } else {
       return (
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -61,17 +61,18 @@ class Video extends React.Component {
               autoPlay
               src={workoutList[todaysWorkouts[0]].videoUrl}
             />
-            {/* <Typography className={classes.title} component="p">
-            <Typography
-              className={classes.title}
-              component="h1"
-              variant="h5"
-              color="primary"
-            >
-              {workouts[this.props.workouts[0]].title}
-            </Typography>
+            <Typography className={classes.title} component="div">
+              <Typography
+                className={classes.title}
+                component="h1"
+                variant="h5"
+                color="primary"
+              >
+                {workouts[this.props.workouts[0]].title}
+              </Typography>
               {workouts[this.props.workouts[0]].description}
-            </Typography> */}
+            </Typography>{" "}
+            */}
             <Grid container spacing={3}>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>

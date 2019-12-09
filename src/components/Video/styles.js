@@ -1,4 +1,3 @@
-import { textAlign } from "@material-ui/system";
 
 export default theme => ({
   paper: {

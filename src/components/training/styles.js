@@ -1,5 +1,3 @@
-import { textAlign } from "@material-ui/system";
-
 export default theme => ({
   paper: {
     paddingTop: theme.spacing(2),
