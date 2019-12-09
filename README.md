@@ -1,6 +1,6 @@
 ### README
 
-This is a Fitness App which provides users with workouts, plans and help them to track their diet and health lifestyle. 
+This is a Fitness App which provides users with workout plans, help them to track their diet with active life style. 
 
 ## Table of contents:
 
