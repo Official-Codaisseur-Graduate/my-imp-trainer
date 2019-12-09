@@ -1,4 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and [Material-UI](https://material-ui.com/)
+### README
+
+This is a Fitness App which provides users with workouts, plans and help them to track their diet and health lifestyle. 
+
+## Table of contents:
+
+- **[Technologies used](#technologies-used)**
+- **[Availaable scripts](#available-scripts)**
+- **[Getting Started](#getting-started)**
+
+
+
+- Link to getting started
+
+## Technologies used
+- The Frontend of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [Material-UI](https://material-ui.com/) and [Redux](https://redux.js.org/introduction/getting-started).
+
+- The Backend you can find here (https://github.com/Official-Codaisseur-Graduate/my-imp-trainer-server). with its own Readme file.
 
 ## Available Scripts
 
