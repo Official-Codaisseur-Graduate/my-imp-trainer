@@ -20,7 +20,6 @@ class Training extends React.Component {
   state = { trophy: false, achievement: "" };
 
   componentDidMount() {
-    console.log("comp did mount");
     if (this.props.match.params.trainingId)
       this.props.dispatch({
         type: "WORKOUT",
@@ -39,9 +38,6 @@ class Training extends React.Component {
   };
 
   render() {
-    console.log("this.props.workout", this.props.workout);
-    console.log("PROPS FROM TRAINING CONTAINER", this.props);
-
     const { classes } = this.props;
     if (this.state.trophy) {
       return <Trophy achievement={this.state.achievement} />;
@@ -121,7 +117,6 @@ class Training extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log("recieve state");
   return {
     workout: state.workout,
     workoutList: state.workoutList
