@@ -14,7 +14,7 @@ This is a Fitness App which provides users with workouts, plans and help them to
 ## Technologies used
 - The Frontend of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [Material-UI](https://material-ui.com/) and [Redux](https://redux.js.org/introduction/getting-started).
 
-- The Backend you can find here (https://github.com/Official-Codaisseur-Graduate/my-imp-trainer-server). with its own Readme file.
+- The Backend you can find [here](https://github.com/Official-Codaisseur-Graduate/my-imp-trainer-server). with its own Readme file.
 
 ## Available Scripts
 
