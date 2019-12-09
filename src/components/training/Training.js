@@ -49,14 +49,14 @@ class Training extends React.Component {
             <div className={classes.logo}>
               <img src={logo} alt="IMP Trainer" />
             </div>
-            {/* <Typography
+            <Typography
               className={classes.title}
               component="h1"
               variant="h5"
               color="primary"
             >
               {this.props.workout.title}
-            </Typography> */}
+            </Typography>
             <video
               className={classes.video}
               controls
