@@ -56,4 +56,4 @@ You will also see any lint errors in the console.
 
 Please login and/or signup (logic still to be implemented) on the login page:
 
-![Image description](/src/images/Screenshot 2019-12-09 at 11.22.46.png)
+![Login screenshot](/src/images/login-page.png)
