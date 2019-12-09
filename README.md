@@ -15,3 +15,8 @@ You will also see any lint errors in the console.
 ### CHANGELOG.md
 
 - Now you can find it [there](https://github.com/Official-Codaisseur-Graduate/my-imp-trainer/blob/development/CHANGELOG.md), don't forget to update!
+
+### A lot of things to work on!
+
+- Feel free to fix [bugs](https://github.com/Official-Codaisseur-Graduate/my-imp-trainer/issues)
+- Or [improve](https://github.com/Official-Codaisseur-Graduate/my-imp-trainer/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement) it if you have time
