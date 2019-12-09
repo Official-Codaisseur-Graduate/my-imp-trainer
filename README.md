@@ -57,3 +57,15 @@ You will also see any lint errors in the console.
 Please login and/or signup (logic still to be implemented) on the login page:
 
 ![Login screenshot](/src/images/login-page.png)
+
+![Dashboard screenshot](/src/images/dashboard-page.png)
+
+![Calendar 1 screenshot](/src/images/calendar-page1.png)
+
+![Calendar 2 screenshot](/src/images/calendar-page2.png)
+
+![Calendar 3 screenshot](/src/images/calendar-page3.png)
+
+![Workout 1 screenshot](/src/images/workout-page1.png)
+
+![Workout 2 screenshot](/src/images/workout-page2.png)
