@@ -247,16 +247,7 @@ const mappedTitle = workouts.map((object) => {
   return object.title;
 });
 
-// const filtered = workouts.filter((object) => {
-//   return object.title;
-// });
 
-// const filtering = workouts.filter(object => object.id === workout[0][0]).length
-
-console.log(workoutOne);
-console.log(workoutTwo);
-// console.log(mappedId);
-// console.log(mappedTitle);
 
 const firstWorkout = () => {
   if (workoutOne === 1) {

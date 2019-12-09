@@ -1,4 +1,3 @@
-// import { workouts } from "../data.js";
 
 const reducer = (state = [], action = {}) => {
   switch (action.type) {
@@ -6,7 +5,6 @@ const reducer = (state = [], action = {}) => {
       return action.payload.workoutList.find(
         workout => workout.id == action.payload.trainingId
       );
-    // return workouts.find(workout => workout.id == action.payload);
     default:
       return state;
   }

@@ -1,4 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### README
+
+This is a Fitness App which provides users with workout plans, help them to track their diet with active life style.
+This project was created by Codaisseur students in week 9 to experience working on a Real World Project.
+
+## Table of contents:
+
+- **[Technologies used](#technologies-used)**
+- **[Getting Started](#getting-started)**
+- **[Available scripts](#available-scripts)**
+
+## Technologies used
+
+- The Frontend of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [Material-UI](https://material-ui.com/) and [Redux](https://redux.js.org/introduction/getting-started).
+
+- The Backend you can find [here](https://github.com/Official-Codaisseur-Graduate/my-imp-trainer-server). with its own Readme file.
+
+### CHANGELOG.md
+
+- Now you can find it [there](https://github.com/Official-Codaisseur-Graduate/my-imp-trainer/blob/development/CHANGELOG.md), don't forget to update!
+
+### A lot of things to work on!
+
+- Feel free to fix [bugs](https://github.com/Official-Codaisseur-Graduate/my-imp-trainer/issues)
+- Or [improve](https://github.com/Official-Codaisseur-Graduate/my-imp-trainer/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement) the app if you have time
+
+## Getting Started
+
+Step-by-step instructions to get you up and running!
+
+### Clone the repo
+
+Clone the repo to your local machine using the following SSH Link: git@github.com:Official-Codaisseur-Graduate/my-imp-trainer.git
+
+### Install required dependencies
+
+If not already installed, install dependencies in the project directory by running the following:
+
+- `npm install` || `npm i`
+
+This will install the required dependencies.
 
 ## Available Scripts
 
@@ -12,57 +52,28 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+## Instructions
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Please login and/or signup (logic still to be implemented) on the login page:
 
-### `npm run build`
+![Login screenshot](/src/images/login-page.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Continue to the dashboard page to see your current schedule and progress:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![Dashboard screenshot](/src/images/dashboard-page.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Continue to the calendar if you would like to see your current and future schedule with previously conducted exercises and future exercises:
 
-### `npm run eject`
+![Calendar 1 screenshot](/src/images/calendar-page1.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+More detailed impressions of the calendar:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Calendar 2 screenshot](/src/images/calendar-page2.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Calendar 3 screenshot](/src/images/calendar-page3.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Check the workoutpage for specific workout related information:
 
-## Learn More
+![Workout 1 screenshot](/src/images/workout-page1.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![Workout 2 screenshot](/src/images/workout-page2.png)

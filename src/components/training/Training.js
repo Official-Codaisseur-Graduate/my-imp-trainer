@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   CssBaseline,
   Paper,
   Grid,
@@ -86,17 +85,6 @@ class Training extends React.Component {
                 </Paper>
               </Grid>
             </Grid>
-            {/* <Button
-              onClick={() => this.finishWorkout()}
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              <Done />
-              Done!
-            </Button>{" "}
-             */}
             <Grid style={{ height: "20px", width: "100%" }}></Grid>
             <Grid container>
               <Grid item xs>
