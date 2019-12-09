@@ -10,7 +10,6 @@ import Container from "@material-ui/core/Container";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import logo from "../../images/logo.png";
-import { users } from "../../data.js";
 import request from "superagent";
 import { connect } from "react-redux";
 
@@ -24,6 +23,7 @@ class Login extends Component {
   };
 
   handleSubmit = event => {
+    //Dev mode, always fetching first user in DB for now
     event.preventDefault();
     request
       .get("https://radiant-ocean-32463.herokuapp.com/user/1")
@@ -35,18 +35,6 @@ class Login extends Component {
       });
     this.props.history.push("/dashboard");
 
-    // users.forEach(user =>
-    //   if (
-    //     user.email === this.state.emailAddress &&
-    //     user.password === this.state.password
-    //   ) {
-    //     this.props.history.push("/dashboard");
-    //   } else {
-    //     this.setState({
-    //       failedAuth: true
-    //     });
-    //   }
-    // });
   };
   render() {
     const { classes } = this.props;
@@ -94,16 +82,9 @@ class Login extends Component {
                 autoComplete="current-password"
                 onChange={this.handleChange}
               />
-              {/* <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          /> */}
-              {/* <Route to={"/dashboard"}> */}
-              {this.state && this.state.failedAuth ? (
                 <Typography>
-                  <em>The email or password is incorrect</em>
+                  <em>Dev mode, no actual auth. Click 'Sign in' to explore the app.</em>
                 </Typography>
-              ) : null}
               <Button
                 type="submit"
                 fullWidth

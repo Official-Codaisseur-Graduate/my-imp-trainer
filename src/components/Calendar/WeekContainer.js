@@ -36,6 +36,7 @@ const ExpansionPanelSummary = withStyles({
     minHeight: 56,
     flexGrow: '0 !important',
     width: '100%',
+
     '&$expanded': {
       minHeight: 56
     }
@@ -102,13 +103,11 @@ const WeekContainer = (props) => {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography component='div'>
-                {/* <Grid container spacing={2}> */}
                 <List className={classes.root}>
                   {week.map((day) => (
                     <Day key={day.id} calendar={calendar} day={day} workouts={workouts} />
                   ))}
                 </List>
-                {/* </Grid> */}
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>

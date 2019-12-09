@@ -11,29 +11,29 @@ export default function Day(props) {
   const { day } = props;
   const { workouts } = props;
 
-  const images = [
-    {
-      image: 'https://source.unsplash.com/featured/?{weightlifting}'
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?{gym}'
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?{crossfit}'
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?{fitness}'
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?{barbells}'
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?{bodybuilding}'
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?{trainer}'
-    }
-  ];
+  // const images = [
+  //   {
+  //     image: 'https://source.unsplash.com/featured/?{weightlifting}'
+  //   },
+  //   {
+  //     image: 'https://source.unsplash.com/featured/?{gym}'
+  //   },
+  //   {
+  //     image: 'https://source.unsplash.com/featured/?{crossfit}'
+  //   },
+  //   {
+  //     image: 'https://source.unsplash.com/featured/?{fitness}'
+  //   },
+  //   {
+  //     image: 'https://source.unsplash.com/featured/?{barbells}'
+  //   },
+  //   {
+  //     image: 'https://source.unsplash.com/featured/?{bodybuilding}'
+  //   },
+  //   {
+  //     image: 'https://source.unsplash.com/featured/?{trainer}'
+  //   }
+  // ];
 
   const second = day.workouts.length !== 0 ? `${day.workouts.length} workouts:` : `Rest day`;
 
@@ -98,16 +98,8 @@ export default function Day(props) {
     >
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
-            {/* <img src={images[day.id - 1].image} alt="" /> */}
-            {/* style={{ width: '60px' }}  */}
-          </Avatar>
+          <Avatar></Avatar>
         </ListItemAvatar>
-        {/* <ListItemText
-          primary={`Day ${day.day}, ${second}`}
-          secondary={`${firstWorkout()} & ${secondWorkout()}`}
-          // Workouts:
-        /> */}
         <Typography variant='div' color='inherit'>
           {`Day ${day.day}, ${second}`}
           <br></br>

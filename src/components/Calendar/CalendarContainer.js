@@ -90,7 +90,6 @@ const mainFeaturedPost = {
 const CalendarContainer = (props) => {
   const classes = useStyles();
   const calendar = props.calendar;
-  const workoutList = props.workoutList;
 
   const amountOfWorkouts = calendar
     .map((object) => {
@@ -169,6 +168,7 @@ const CalendarContainer = (props) => {
               {/* </Typography> */}
             </ExpansionPanelDetails>
           </ExpansionPanel>
+
           <Route to={'/dashboard'}>
             <Button className={classes.mainGrid} variant='contained' color='primary'>
               BACK TO DASHBOARD

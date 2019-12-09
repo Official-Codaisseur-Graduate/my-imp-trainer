@@ -14,17 +14,16 @@ import { Done, ArrowRight, ArrowLeft } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import Trophy from "../trophy/Trophy";
 import { connect } from "react-redux";
-import { workouts } from "../../data";
 import Workout from "./Workout";
 
 class Video extends React.Component {
   state = { trophy: false, achievement: "", start: false };
 
   finishWorkout = id => {
-    this.props.dispatch({
-      type: "TODAY_WORKOUTS",
-      payload: id
-    });
+    // this.props.dispatch({
+    //   type: "TODAY_WORKOUTS",
+    //   payload: id
+    // });
     this.setState({
       trophy: true,
       achievement: "workout"
@@ -61,18 +60,17 @@ class Video extends React.Component {
               autoPlay
               src={workoutList[todaysWorkouts[0]].videoUrl}
             />
-            <Typography className={classes.title} component="div">
+            <div className={classes.title}>
               <Typography
                 className={classes.title}
                 component="h1"
                 variant="h5"
                 color="primary"
               >
-                {workouts[this.props.workouts[0]].title}
+                {workoutList[todaysWorkouts[0]].title}
               </Typography>
-              {workouts[this.props.workouts[0]].description}
-            </Typography>{" "}
-            */}
+              {workoutList[todaysWorkouts[0]].description}
+            </div>{" "}
             <Grid container spacing={3}>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>

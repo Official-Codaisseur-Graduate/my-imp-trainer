@@ -82,7 +82,7 @@ export default function Workout(props) {
                <Grid container>
               <Grid item xs className={classes.profile}>
                 <Link to="/dashboard" variant="body2">
-                  <ArrowLeft className={classes.arrow} /> My profile
+                  <ArrowLeft className={classes.arrow} /> Dashboard
                 </Link>
               </Grid>
               <Grid item xs className={classes.calendar}>
