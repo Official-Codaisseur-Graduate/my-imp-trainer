@@ -10,7 +10,6 @@ import Container from "@material-ui/core/Container";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import logo from "../../images/logo.png";
-import { users } from "../../data.js";
 import request from "superagent";
 import { connect } from "react-redux";
 

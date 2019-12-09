@@ -1,45 +1,16 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import ListItem from "@material-ui/core/ListItem";
-// import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
-// import Link from 'react-router-dom';
 import { Link as Route } from "react-router-dom";
 import { green } from "@material-ui/core/colors";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 
 export default function Day(props) {
-  // const { calendar } = props;
   const { day } = props;
   const { workouts } = props;
-  // console.log('Calendar:', calendar);
-  // console.log('Day:', day);
-  // console.log('Workouts:', workouts);
 
-  const images = [
-    {
-      image: "https://source.unsplash.com/featured/?{weightlifting}"
-    },
-    {
-      image: "https://source.unsplash.com/featured/?{gym}"
-    },
-    {
-      image: "https://source.unsplash.com/featured/?{crossfit}"
-    },
-    {
-      image: "https://source.unsplash.com/featured/?{fitness}"
-    },
-    {
-      image: "https://source.unsplash.com/featured/?{barbells}"
-    },
-    {
-      image: "https://source.unsplash.com/featured/?{bodybuilding}"
-    },
-    {
-      image: "https://source.unsplash.com/featured/?{trainer}"
-    }
-  ];
 
   const second =
     day.workouts.length !== 0 ? `${day.workouts.length} workouts:` : `Rest day`;
@@ -47,17 +18,6 @@ export default function Day(props) {
   const workoutOne = day.workouts[0];
   const workoutTwo = day.workouts[1];
 
-  // const workoutOne = calendar.map((object) => {
-  //   return object.workouts[0];
-  // });
-
-  // const workoutTwo = calendar.map((object) => {
-  //   return object.workouts[1];
-  // });
-
-  // const mappedId = workouts.map((object) => {
-  //   return object.id;
-  // });
 
   const mappedTitle = workouts.map(object => {
     return object.title;
@@ -104,7 +64,6 @@ export default function Day(props) {
   ) : null;
 
   return (
-    // <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
     <div
       style={{
         display: "flex",
@@ -119,15 +78,8 @@ export default function Day(props) {
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-            {/* <img src={images[day.id - 1].image} alt="" /> */}
-            {/* style={{ width: '60px' }}  */}
           </Avatar>
         </ListItemAvatar>
-        {/* <ListItemText
-          primary={`Day ${day.day}, ${second}`}
-          secondary={`${firstWorkout()} & ${secondWorkout()}`}
-          // Workouts:
-        /> */}
         <Typography variant="div" color="inherit">
           {`Day ${day.day}, ${second}`}
           <br></br>
@@ -141,7 +93,6 @@ export default function Day(props) {
         </Typography>
       </ListItem>
       {complete}
-      {/* <CheckBoxIcon style={{ color: green[500] }} /> */}
     </div>
   );
 }
