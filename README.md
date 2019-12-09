@@ -58,13 +58,21 @@ Please login and/or signup (logic still to be implemented) on the login page:
 
 ![Login screenshot](/src/images/login-page.png)
 
+Continue to the dashboard page to see your current schedule and progress:
+
 ![Dashboard screenshot](/src/images/dashboard-page.png)
 
+Continue to the calendar if you would like to see your current and future schedule with previously conducted exercises and future exercises:
+
 ![Calendar 1 screenshot](/src/images/calendar-page1.png)
+
+More detailed impressions of the calendar:
 
 ![Calendar 2 screenshot](/src/images/calendar-page2.png)
 
 ![Calendar 3 screenshot](/src/images/calendar-page3.png)
+
+Check the workoutpage for specific workout related information:
 
 ![Workout 1 screenshot](/src/images/workout-page1.png)
 
