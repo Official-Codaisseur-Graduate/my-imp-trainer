@@ -119,7 +119,7 @@ export default function Day(props) {
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-            <img src={images[day.id - 1].image} alt="" />
+            {/* <img src={images[day.id - 1].image} alt="" /> */}
             {/* style={{ width: '60px' }}  */}
           </Avatar>
         </ListItemAvatar>

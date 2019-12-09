@@ -11,6 +11,8 @@ import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import logo from "../../images/logo.png";
 import { users } from "../../data.js";
+import request from "superagent";
+import { connect } from "react-redux";
 
 class Login extends Component {
   handleChange = event => {
@@ -23,18 +25,28 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    users.forEach(user => {
-      if (
-        user.email === this.state.emailAddress &&
-        user.password === this.state.password
-      ) {
-        this.props.history.push("/dashboard");
-      } else {
-        this.setState({
-          failedAuth: true
+    request
+      .get("https://radiant-ocean-32463.herokuapp.com/user/1")
+      .then(res => {
+        this.props.dispatch({
+          type: "USER",
+          payload: res.body
         });
-      }
-    });
+      });
+    this.props.history.push("/dashboard");
+
+    // users.forEach(user =>
+    //   if (
+    //     user.email === this.state.emailAddress &&
+    //     user.password === this.state.password
+    //   ) {
+    //     this.props.history.push("/dashboard");
+    //   } else {
+    //     this.setState({
+    //       failedAuth: true
+    //     });
+    //   }
+    // });
   };
   render() {
     const { classes } = this.props;
@@ -122,4 +134,10 @@ class Login extends Component {
   }
 }
 
-export default withStyles(styles)(Login);
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  };
+};
+
+export default withStyles(styles)(connect(mapStateToProps)(Login));

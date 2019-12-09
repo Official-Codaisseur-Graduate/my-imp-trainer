@@ -12,8 +12,9 @@ import MainFeaturedPost from './MainFeaturedPost';
 import WeekContainer from './WeekContainer';
 import { CardContent } from '@material-ui/core';
 import logo from '../../images/logo.png';
-import { calendar } from '../../data';
+//import { calendar } from '../../data';
 import { Link as Route } from 'react-router-dom';
+import { connect } from "react-redux";
 
 const ExpansionPanel = withStyles({
   root: {
@@ -110,8 +111,12 @@ const mainFeaturedPost = {
 //   }
 // ];
 
-export default function CalendarContainer() {
+const  CalendarContainer = (props) => {
+  console.log('PROPS IN CALENDARCONTAINER', props)
   const classes = useStyles();
+//   IMPORT CALENDAR FROM STATE CALENDAR
+  const calendar = props.calendar;
+  const workoutList = props.workoutList;
 
   const amountOfWorkouts = calendar
     .map((object) => {
@@ -154,7 +159,7 @@ export default function CalendarContainer() {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <WeekContainer />
+                <WeekContainer calendar={props.calendar} workoutList={props.workoutList}/>
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -176,7 +181,7 @@ export default function CalendarContainer() {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <WeekContainer />
+                <WeekContainer calendar={props.calendar} workoutList={props.workoutList}/>
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -198,7 +203,7 @@ export default function CalendarContainer() {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <WeekContainer />
+                <WeekContainer calendar={props.calendar} workoutList={props.workoutList}/>
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -217,3 +222,12 @@ export default function CalendarContainer() {
     </React.Fragment>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    workoutList: state.workoutList,
+    calendar: state.calendar
+  };
+};
+
+export default (connect(mapStateToProps)(CalendarContainer));

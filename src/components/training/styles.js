@@ -1,4 +1,3 @@
-
 export default theme => ({
   paper: {
     paddingTop: theme.spacing(2),
