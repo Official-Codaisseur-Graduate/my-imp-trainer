@@ -10,9 +10,6 @@ import Container from "@material-ui/core/Container";
 import Day from "./Day";
 import List from "@material-ui/core/List";
 
-//replace both below
-// import { calendar } from "../../data";
-// import { workouts } from "../../data";
 
 const ExpansionPanel = withStyles({
   root: {
@@ -43,17 +40,7 @@ const ExpansionPanelSummary = withStyles({
     flexGrow: "0 !important",
     width: "100%",
 
-    // // Small devices (landscape phones, 576px and up)
-    // @media (min-width: 576px) { ... }
-
-    // // Medium devices (tablets, 768px and up)
-    // @media (min-width: 768px) { ... }
-
-    // // Large devices (desktops, 992px and up)
-    // @media (min-width: 992px) { ... }
-
-    // // Extra large devices (large desktops, 1200px and up)
-    // @media (min-width: 1200px) { ... }
+   
 
     "&$expanded": {
       minHeight: 56
@@ -80,7 +67,6 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
     maxWidth: 360,
-    // backgroundColor: theme.palette.background.paper
     backgroundColor: "#070707"
   },
   mainGrid: {
@@ -132,7 +118,6 @@ const WeekContainer = props => {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography component="div">
-                {/* <Grid container spacing={2}> */}
                 <List className={classes.root}>
                   {week.map(day => (
                     <Day
@@ -143,7 +128,6 @@ const WeekContainer = props => {
                     />
                   ))}
                 </List>
-                {/* </Grid> */}
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -235,86 +219,3 @@ const WeekContainer = props => {
 };
 
 export default WeekContainer;
-// export default function WeekContainer(props) {
-//   const classes = useStyles();
-//   console.log('PROPS FROM WEEKCONTAINER', props)
-//   const week = calendar.slice(0, 7);
-//   // console.log(week);
-
-//   const [expanded, setExpanded] = React.useState('panel');
-
-//   const handleChange = (panel) => (event, newExpanded) => {
-//     setExpanded(newExpanded ? panel : false);
-//   };
-
-//   return (
-//     <React.Fragment>
-//       <CssBaseline />
-//       <Container maxWidth='lg'>
-//         <main>
-//           <ExpansionPanel square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-//             <ExpansionPanelSummary aria-controls='panel1d-content' id='panel1d-header'>
-//               <Typography>Week 1</Typography>
-//             </ExpansionPanelSummary>
-//             <ExpansionPanelDetails>
-//               <Typography>
-//                 {/* <Grid container spacing={2}> */}
-//                 <List className={classes.root}>
-//                   {week.map((day) => (
-//                     <Day key={day.id} calendar={calendar} day={day} workouts={workouts} />
-//                   ))}
-//                 </List>
-//                 {/* </Grid> */}
-//               </Typography>
-//             </ExpansionPanelDetails>
-//           </ExpansionPanel>
-
-//           <ExpansionPanel square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-//             <ExpansionPanelSummary aria-controls='panel2d-content' id='panel2d-header'>
-//               <Typography>Week 2</Typography>
-//             </ExpansionPanelSummary>
-//             <ExpansionPanelDetails>
-//               <Typography>
-//                 <List className={classes.root}>
-//                   {week.map((day) => (
-//                     <Day key={day.id} calendar={calendar} day={day} workouts={workouts} />
-//                   ))}
-//                 </List>
-//               </Typography>
-//             </ExpansionPanelDetails>
-//           </ExpansionPanel>
-
-//           <ExpansionPanel square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-//             <ExpansionPanelSummary aria-controls='pane3d-content' id='panel3d-header'>
-//               <Typography>Week 3</Typography>
-//             </ExpansionPanelSummary>
-//             <ExpansionPanelDetails>
-//               <Typography>
-//                 <List className={classes.root}>
-//                   {week.map((day) => (
-//                     <Day key={day.id} calendar={calendar} day={day} workouts={workouts} />
-//                   ))}
-//                 </List>
-//               </Typography>
-//             </ExpansionPanelDetails>
-//           </ExpansionPanel>
-
-//           <ExpansionPanel square expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-//             <ExpansionPanelSummary aria-controls='pane3d-content' id='panel3d-header'>
-//               <Typography>Week 4</Typography>
-//             </ExpansionPanelSummary>
-//             <ExpansionPanelDetails>
-//               <Typography>
-//                 <List className={classes.root}>
-//                   {week.map((day) => (
-//                     <Day key={day.id} calendar={calendar} day={day} workouts={workouts} />
-//                   ))}
-//                 </List>
-//               </Typography>
-//             </ExpansionPanelDetails>
-//           </ExpansionPanel>
-//         </main>
-//       </Container>
-//     </React.Fragment>
-//   );
-// }

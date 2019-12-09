@@ -16,7 +16,7 @@ import { connect } from "react-redux";
 import request from "superagent";
 
 class DashboardContainer extends Component {
-  // state = { user: users[0] };
+  
 
   async componentDidMount() {
     const user = await request
