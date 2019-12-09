@@ -23,7 +23,10 @@ class Training extends React.Component {
     if (this.props.match.params.trainingId)
       this.props.dispatch({
         type: "WORKOUT",
-        payload: this.props.match.params.trainingId
+        payload: {
+          workoutList: this.props.workoutList,
+          trainingId: this.props.match.params.trainingId
+        }
       });
   }
 
@@ -46,14 +49,14 @@ class Training extends React.Component {
             <div className={classes.logo}>
               <img src={logo} alt="IMP Trainer" />
             </div>
-            <Typography
+            {/* <Typography
               className={classes.title}
               component="h1"
               variant="h5"
               color="primary"
             >
               {this.props.workout.title}
-            </Typography>
+            </Typography> */}
             <video
               className={classes.video}
               controls
@@ -84,7 +87,7 @@ class Training extends React.Component {
               </Grid>
             </Grid>
             <Button
-              onClick={() => this.finishWorkout(this.props.workouts[0])}
+              onClick={() => this.finishWorkout()}
               fullWidth
               variant="contained"
               color="primary"
@@ -96,7 +99,7 @@ class Training extends React.Component {
             <Grid container>
               <Grid item xs>
                 <Link to="/dashboard" variant="body2">
-                  <ArrowLeft className={classes.arrow} /> My profile
+                  <ArrowLeft className={classes.arrow} /> Dashboard
                 </Link>
               </Grid>
               <Grid item xs>
@@ -115,7 +118,8 @@ class Training extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    workout: state.workout
+    workout: state.workout,
+    workoutList: state.workoutList
   };
 };
 
