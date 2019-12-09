@@ -10,7 +10,6 @@ This is a Fitness App which provides users with workouts, plans and help them to
 
 
 
-- Link to getting started
 
 ## Technologies used
 - The Frontend of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [Material-UI](https://material-ui.com/) and [Redux](https://redux.js.org/introduction/getting-started).
