@@ -77,7 +77,7 @@ class DashboardContainer extends Component {
         <div>
           <img src={logo} style={{ width: "100%" }} alt="logo" />
         </div>
-        <User userImage={user.imageUrl} userName={userName}></User>
+        <User userImage={user.picture} userName={userName}></User>
         <ProgressBar percentage={userProgress} />
         <div className={classes.trackers}>
           <Tracker icon="kcal" number="340 kcal" />
