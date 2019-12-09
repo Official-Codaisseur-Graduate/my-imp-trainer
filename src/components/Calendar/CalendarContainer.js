@@ -90,7 +90,6 @@ const mainFeaturedPost = {
 
 
 const  CalendarContainer = (props) => {
-  console.log('PROPS IN CALENDARCONTAINER', props)
   const classes = useStyles();
 //   IMPORT CALENDAR FROM STATE CALENDAR
   const calendar = props.calendar;
