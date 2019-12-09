@@ -12,9 +12,8 @@ import MainFeaturedPost from './MainFeaturedPost';
 import WeekContainer from './WeekContainer';
 import { CardContent } from '@material-ui/core';
 import logo from '../../images/logo.png';
-
 import { Link as Route } from 'react-router-dom';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 const ExpansionPanel = withStyles({
   root: {
@@ -88,10 +87,8 @@ const mainFeaturedPost = {
   linkText: "Continue to today's workout."
 };
 
-
-const  CalendarContainer = (props) => {
+const CalendarContainer = (props) => {
   const classes = useStyles();
-//   IMPORT CALENDAR FROM STATE CALENDAR
   const calendar = props.calendar;
 
   const amountOfWorkouts = calendar
@@ -127,13 +124,12 @@ const  CalendarContainer = (props) => {
                 <Typography variant='subtitle1' color='textSecondary'>
                   {amountOfWorkouts} workouts
                 </Typography>
-              
               </CardContent>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <Typography>
-                <WeekContainer calendar={props.calendar} workoutList={props.workoutList}/>
-              </Typography>
+              {/* <Typography> */}
+              <WeekContainer calendar={props.calendar} workoutList={props.workoutList} />
+              {/* </Typography> */}
             </ExpansionPanelDetails>
           </ExpansionPanel>
 
@@ -146,13 +142,12 @@ const  CalendarContainer = (props) => {
                 <Typography variant='subtitle1' color='textSecondary'>
                   {amountOfWorkouts} workouts
                 </Typography>
-                
               </CardContent>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <Typography>
-                <WeekContainer calendar={props.calendar} workoutList={props.workoutList}/>
-              </Typography>
+              {/* <Typography> */}
+              <WeekContainer calendar={props.calendar} workoutList={props.workoutList} />
+              {/* </Typography> */}
             </ExpansionPanelDetails>
           </ExpansionPanel>
 
@@ -165,16 +160,15 @@ const  CalendarContainer = (props) => {
                 <Typography variant='subtitle1' color='textSecondary'>
                   {amountOfWorkouts} workouts
                 </Typography>
-              
               </CardContent>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <Typography>
-                <WeekContainer calendar={props.calendar} workoutList={props.workoutList}/>
-              </Typography>
+              {/* <Typography> */}
+              <WeekContainer calendar={props.calendar} workoutList={props.workoutList} />
+              {/* </Typography> */}
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <Route to={'/dashboard'}>
             <Button className={classes.mainGrid} variant='contained' color='primary'>
               BACK TO DASHBOARD
@@ -184,13 +178,13 @@ const  CalendarContainer = (props) => {
       </Container>
     </React.Fragment>
   );
-}
+};
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     workoutList: state.workoutList,
     calendar: state.calendar
   };
 };
 
-export default (connect(mapStateToProps)(CalendarContainer));
+export default connect(mapStateToProps)(CalendarContainer);

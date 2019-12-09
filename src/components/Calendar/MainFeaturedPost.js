@@ -42,7 +42,7 @@ export default function MainFeaturedPost(props) {
   return (
     <Route to={'/video/userId'}>
       <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
-        {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+        <img style={{ display: 'none' }} src={post.image} alt={post.imageText} />
         <div className={classes.overlay} />
         <Grid container>
           <Grid item md={6}>
@@ -50,9 +50,9 @@ export default function MainFeaturedPost(props) {
               <Typography component='h1' variant='h3' color='inherit' gutterBottom>
                 {post.title}
               </Typography>
-              <Route to={'/video/userId'} variant='subtitle1'>
+              <Typography to={'/video/userId'} variant='subtitle1'>
                 {post.linkText}
-                </Route>
+              </Typography>
             </div>
           </Grid>
         </Grid>
