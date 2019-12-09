@@ -34,21 +34,20 @@ class Video extends React.Component {
   };
 
   startWorkout = () => {
-    
     this.setState({
       start: true
     });
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, todaysWorkouts, workoutList } = this.props;
     if (this.state.trophy) {
       return <Trophy achievement={this.state.achievement} />;
     } if(!this.state.start){
         return <Workout
          startWorkout={this.startWorkout}
-         title={workouts[this.props.workouts[0]].title}
-         description={workouts[this.props.workouts[0]].description}
+         title={workoutList[todaysWorkouts[0]].title}
+         description={workoutList[todaysWorkouts[0]].description}
          />
     }
     else {
@@ -60,9 +59,9 @@ class Video extends React.Component {
               className={classes.video}
               // controls
               autoPlay
-              src={workouts[this.props.workouts[0]].videoUrl}
+              src={workoutList[todaysWorkouts[0]].videoUrl}
             />
-            <Typography className={classes.title} component="p">
+            {/* <Typography className={classes.title} component="p">
             <Typography
               className={classes.title}
               component="h1"
@@ -72,29 +71,29 @@ class Video extends React.Component {
               {workouts[this.props.workouts[0]].title}
             </Typography>
               {workouts[this.props.workouts[0]].description}
-            </Typography>
+            </Typography> */}
             <Grid container spacing={3}>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Kcal</p>
-                  <p>{workouts[this.props.workouts[0]].calories}</p>
+                  <p>{workoutList[todaysWorkouts[0]].calories}</p>
                 </Paper>
               </Grid>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Time</p>
-                  <p>{workouts[this.props.workouts[0]].totalTime * 0.0001}</p>
+                  <p>{workoutList[todaysWorkouts[0]].totalTime * 0.0001}</p>
                 </Paper>
               </Grid>
               <Grid item xs={4}>
                 <Paper className={classes.grid}>
                   <p>Level</p>
-                  <p>{workouts[this.props.workouts[0]].difficulty}</p>
+                  <p>{workoutList[todaysWorkouts[0]].difficulty}</p>
                 </Paper>
               </Grid>
             </Grid>
             <Button
-              onClick={() => this.finishWorkout(this.props.workouts[0])}
+              onClick={() => this.finishWorkout(todaysWorkouts[0])}
               fullWidth
               variant="contained"
               color="primary"
@@ -106,7 +105,7 @@ class Video extends React.Component {
             <Grid container>
               <Grid item xs>
                 <Link to="/dashboard" variant="body2">
-                  <ArrowLeft className={classes.arrow} /> My profile
+                  <ArrowLeft className={classes.arrow} /> Dashboard
                 </Link>
               </Grid>
               <Grid item xs>
@@ -125,7 +124,8 @@ class Video extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    workouts: state.workouts
+    todaysWorkouts: state.todaysWorkouts,
+    workoutList: state.workoutList
   };
 };
 
