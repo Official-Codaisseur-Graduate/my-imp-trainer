@@ -12,7 +12,7 @@ import styles from "./styles";
 import Container from "@material-ui/core/Container";
 import { Done, ArrowRight, ArrowLeft } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import Trophy from "../trophy/Trophy";
+import Trophy from "../Trophy/Trophy";
 import { connect } from "react-redux";
 import Workout from "./Workout";
 
@@ -69,7 +69,12 @@ class Video extends React.Component {
               >
                 {workoutList[todaysWorkouts[0]].title}
               </Typography>
-              {workoutList[todaysWorkouts[0]].description}
+              <div
+            dangerouslySetInnerHTML={{
+              __html: workoutList[todaysWorkouts[0]].description
+            }}
+          ></div>
+              {/* {workoutList[todaysWorkouts[0]].description} */}
             </div>{" "}
             <Grid container spacing={3}>
               <Grid item xs={4}>

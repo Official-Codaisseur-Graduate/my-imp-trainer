@@ -12,7 +12,7 @@ import Container from "@material-ui/core/Container";
 import logo from "../../images/logo.png";
 import { ArrowRight, ArrowLeft } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import Trophy from "../trophy/Trophy";
+import Trophy from "../Trophy/Trophy";
 import { connect } from "react-redux";
 
 class Training extends React.Component {

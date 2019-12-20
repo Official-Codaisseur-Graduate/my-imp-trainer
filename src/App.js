@@ -1,19 +1,19 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
-import Login from "./components/login/Login";
+import Login from "./components/Login/Login";
 import CalendarContainer from "./components/Calendar/CalendarContainer";
 // import ScheduleContainer from './components/Schedule/ScheduleContainer';
-import DashboardContainer from "./components/dashboard/DashboardContainer";
+import DashboardContainer from "./components/Dashboard/DashboardContainer";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./styles/theme";
 import { spring, AnimatedSwitch } from "react-router-transition";
-import Trophy from "./components/trophy/Trophy";
+import Trophy from "./components/Trophy/Trophy";
 import Video from "./components/Video/Video";
 import Notfound from "./components/Notfound";
 import store from "./store";
 import { Provider } from "react-redux";
-import Training from "./components/training/Training";
+import Training from "./components/Training/Training";
 
 // we need to map the `scale` prop we define below
 // to the transform style property
